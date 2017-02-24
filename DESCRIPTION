@@ -12,6 +12,6 @@ Imports: dplyr,
     janitor,
     bookdown,
     abjutils,
-    plotly
+    pander
 Remotes:
     rstudio/bookdown
