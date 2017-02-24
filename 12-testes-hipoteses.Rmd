@@ -1,3 +1,5 @@
+# Teste de hipóteses
+
 ## Construçao de um teste de hipóteses
 
 Vamos motivar a construçãode um teste de hipóteses a partir do seguinte exemplo.

@@ -1,3 +1,5 @@
+# Intervalos de confiança
+
 ## Construção de um IC
 
 Como exemplo, vamos construir um intervalo de confiança para a média populacional.

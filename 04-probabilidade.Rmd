@@ -2,7 +2,7 @@
 
 A interpretação da probabilidade pode variar de pessoa para pessoa. Para alguns, a probabilidade é vista como o limite de uma sequência de frequências relativas. Essa é a visão frequentista da probabilidade. Para outros, a probabilidade é uma medida subjetiva de incerteza. Essa é a visão Bayesiana.
 
-### Espaço amostral
+## Espaço amostral
 
 **Definição**. O espaço amostral, comumente denotado por $\Omega$, é o conjunto de todos os possíveis resultados de um *experimento aleatório*.
 
@@ -10,17 +10,17 @@ Chamamos de **evento** qualquer subconjunto de interesse do espaço amostral.
 
 **Definição**. Chamamos de evento complementar do evento $A$, simbolicamente $A^c$, o conjunto formado por todos os elementos que não pertencem a $A$.
 
-### União e intersecção de eventos
+## União e intersecção de eventos
 
 **Definição**. Chamamos de *união* dos eventos $A$ e $B$, simbolicamente $A \cup B$, o conjunto formado pelos elementos que pertencem ao evento $A$ ou ao evento $B$.
 
 **Definição**. Chamamos de intersecção dos eventos $A$ e $B$, simbolicamente, $A \cap B$, o conjunto formado pelos pontos que pertencem ao evento $A$ e ao evento $B$.
 
-### Partição de um espaço amostral
+## Partição de um espaço amostral
 
 **Definição**. Sejam $A_1, A_2, ..., A_n$ uma coleção de eventos tais que $A_1 \cup ...\cup A_n = \Omega$ e $A_1 \cap A_n = \varnothing$, $\forall i \neq j$. Chamamos essa coleção de **partição do espaço amostral**.
 
-### Algumas propriedades
+## Algumas propriedades
 
 Seja $A$ um sub-conjunto de $\Omega$.
 
@@ -28,7 +28,7 @@ Seja $A$ um sub-conjunto de $\Omega$.
 2. $P(\Omega) = 1$ e $P(\varnothing) = 0$
 3. $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 
-### Chance
+## Chance
 
 A chance do evento $A$ é definida pela razão entre as probabilidades de ocorrência e não-ocorrência do evento, isto é,
 

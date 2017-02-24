@@ -1,8 +1,8 @@
-## Base matemátiva
+# Base matemática
 
-### O que são variáveis?
+## O que são variáveis?
 
-Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z...). Exemplos:
+Variáveis são símbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z...). Exemplos:
 
 - Velocidade marcada no velocímetro de um carro.
 - Cor de uma bola retirada de uma urna.
@@ -10,7 +10,7 @@ Variáveis são simbolos que representam valores desconhecidos que podem variar 
 
 Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de *variável aleatória*.
 
-### Conjuntos
+## Conjuntos
 
 Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C ...) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:
 
@@ -23,7 +23,7 @@ Conjuntos importantes para o curso:
 - $\mathbb{N} = \{0, 1, 2, ...\}$ --- conjunto dos números naturais
 - $\mathbb{R} = (-\infty, +\infty)$ --- conjunto dos números reais
 
-### Somatórios e produtórios
+## Somatórios e produtórios
 
 Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:
 
@@ -49,7 +49,7 @@ ou
 
 $\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}$.
 
-### Vetores
+## Vetores
 
 Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas. 
 

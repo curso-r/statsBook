@@ -1,4 +1,4 @@
-## Inferência Estatística
+# Inferência Estatística
 
 O principal objetivo da análise inferencial é fazer afirmações sobre alguma característica de interesse da população.
 

@@ -1,3 +1,5 @@
+# Gráficos
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(pander)
 library(ggplot2)
@@ -213,9 +215,9 @@ USAccDeaths %>%
 
 ```{r, warning=FALSE, echo=FALSE}
 
-#teste <- read.csv(file="dados_times.csv")
+teste <- read.csv(file="dados_times.csv")
 
-#pie(x = teste$torcedores, labels = teste$time)
+pie(x = teste$torcedores, labels = teste$time)
   
 ```
 

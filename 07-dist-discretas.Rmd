@@ -1,3 +1,5 @@
+# Variáveis aleatórias discretas
+
 \usepackage{amsmath}
 
 ## Distribuição Uniforme

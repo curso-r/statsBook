@@ -1,4 +1,4 @@
-### Condicionalidade
+## Condicionalidade
 
 **Definição**. Para dois eventos quaisquer $A$ e $B$, sendo $P(B) > 0$, definimos a *probabilidade condicional* de $A$ dado $B$, denotada por $P(A|B)$, como sendo
 
@@ -6,7 +6,7 @@
 P(A|B) = \frac{P(A\cap B)}{P(B)}.
 \]
 
-### Independência 
+## Independência 
 
 Da definição de probabilidade condicional, temos que
 
@@ -22,7 +22,7 @@ Formalmente, dizemos que dois eventos quaisquer são independentes se
 P(A \cap B) = P(A)P(B).
 \]
 
-### Teorema de Bayes
+## Teorema de Bayes
 
 O Teorema de Bayes é dado pela seguinte expressão:
 
@@ -30,7 +30,7 @@ O Teorema de Bayes é dado pela seguinte expressão:
 P(A|B) = \frac{P(B|A)P(A)}{P(B)}.
 \]
 
-#### Resultado
+### Resultado
 
 Seja $A$ um evento de $\Omega$ e $C_1, ..., C_n$ uma partição desse espaço amostral. Então
 
@@ -44,7 +44,7 @@ Pelo resultado, podemos escrever o Teorema de Bayes como
 P(C_i|A) = \frac{P(A|C_i)P(C_i)}{\sum_{i=1}^{n} P(A|C_i)P(C_i)}.
 \]
 
-#### Exemplo
+### Exemplo
 
 Em uma fábrica de parafusos, as máquinas $A$, $B$ e $C$ produzem 25%, 35% e 40% do total, respectivamente. Da produção de cada máquina 5%, 4% e 2%, respectivamente, são parafusos defeituosos. Escolhe-se ao acaso um parafuso e verifica-se que é defeituoso. Qual a probabilidade de que o parafuso venha da máquina $A$?
 

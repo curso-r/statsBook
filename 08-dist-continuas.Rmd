@@ -1,3 +1,5 @@
+# Variáveis aleatórias contínuas
+
 ## Distribuição Uniforme
 
 Sejam $a$ e $b$ números reais e $X$ uma variável aleatória com função densidade de probabilidade dada por
