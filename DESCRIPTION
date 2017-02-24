@@ -1,0 +1,17 @@
+Package: statsBook
+Title: Conteudo De Cursos De Estatistica Da Curso-R
+Version: 0.0.1
+Imports: dplyr,
+    tidyr,
+    lubridate,
+    readxl,
+    readr,
+    ggplot2,
+    purrr,
+    stringr,
+    janitor,
+    bookdown,
+    abjutils,
+    plotly
+Remotes:
+    rstudio/bookdown
