@@ -1,0 +1,149 @@
+---
+title: "Capítulo 02 - Medidas resumo"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-06
+---
+
+# Medidas de posição central
+
+As medidas de posição central trazem informação sobre a localização dos dados no seu conjunto de possíveis valores, mais especificamente, onde estão centrados.
+
+## Média aritmética
+
+A média aritmética é definida pela soma das observações dividida pelo número total de observações.
+
+### Exemplo
+
+Sejam $x_1, ..., x_n$ $n$ observações de uma variável $X$ qualquer. A média é dada pela expressão
+
+$\frac{\sum_{i=1}^{n}x_i}{n} = \frac{x_1 + x_2 + ... + x_n}{n}$
+
+## Mediana
+
+A mediana é a observação que ocupa a posição central dos dados, quando estão ordenados de forma crescente.
+
+### Exemplo 1 (número ímpar de observações)
+
+Vamos considerar o seguinte conjunto de observações: 3, 7, 10, 5, 2, 1, 1.
+
+Para calcular a mediana, primeiramente ordenamos os dados: 1, 1, 2, 3, 5, 7, 10.
+
+É fácil verificar que a observação que ocupa a posição central é o valor 3. Portanto, 3 é a mediana desse conjunto de valores.
+
+### Exemplo 2 (número par de observações)
+
+Vamos considerar agora o seguinte conjunto de observações: 15, 3, 2, 0, 9, 17.
+
+Ordenanando os dados, temos: 0, 2, 3, 9, 15, 17.
+
+Neste caso, a mediana será dada pela média entre as duas observações centrais, isto é, (3 + 9)/2 = 6.
+
+## Moda
+
+A moda é a observação mais frequente do conjunto de valores observados.
+
+### Exemplo
+
+No conjunto de observações {3, 5, 10, 11, 11, 20}, a observação 11 aparece 2 vezes enquanto as demais apenas 1 vez. Portanto, 11 é a moda desse conjunto.
+
+# Medidas de dispersão
+
+O resumo de um conjunto de dados por uma única medida de posição central não traz informação sobre a variabilidade das observações.
+
+Um critério frequentemente usado para avaliar a dispersão de um conjunto de observações é aquele que mede a dispersão dos dados em torno da sua média.
+
+## Variância
+
+Sejam $x_1, x_2, ..., x_n$ $n$ observações de uma variável quantitativa $X$. Seja $\bar{x}$ a média dessas observações.
+
+Vamos observar, então, os desvios das observações em relação à média $\bar{x}$, isto é, $x_i - \bar{x}$, para $i = 1, ..., n$.
+
+**Ideia 1**: usar como medida de dispersão a soma desses desvios, isto é,
+
+\[
+\sum_{i=1}^{n}(x_i - \bar{x}).
+\]
+
+**Problema 1**: para qualquer conjunto de observações 
+
+\[
+\sum_{i=1}^{n}(x_i - \bar{x}) = 0.
+\]
+
+**Ideia 2**: considerar a soma do quadrado dos desvios, dada por 
+
+\[
+\sum_{i=1}^{n}(x_i - \bar{x})^2
+\]
+
+**Problema 2**: não podemos comparar conjuntos de observações de tamanhos diferentes.
+
+**Ideta 3**: utilizar a média desses desvios quadráticos. 
+
+Sendo assim, definimos a medida de dispersão conhecida como **variância** da seguinte forma:
+
+\[
+VAR(X) = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}
+\]
+
+## Desvio padrão
+
+A utilização da variância como medida de dispersão pode ainda causar um problema de interpretação, pois a sua dimensão é igual ao quadrado da dimensão dos dados. Sendo assim, costuma-se usar o desvio padrão, defino por
+
+\[
+DP(X) = \sqrt{VAR(X)} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}.
+\]
+
+# Quantis
+
+Vimos que a mediana é uma medida que deixa metade dos dados abaixo dela e metade acima. De modo geral, podemos definir a medida $q_p$, $0 < p < 100$, tal que $p%$ das observações sejam menores que $q_p$. Esta medida é chamada de quantil de ordem $p$.
+
+Alguns quantis são bastante utilizados na prática. São eles
+
+$Q1 = q_{25\%}$ (primeiro quartil)
+
+$Q2 = q_{50\%}$ (mediana)
+
+$Q3 = q_{75\%}$ (terceiro quartil)
+
+Observe que os $q_{0\%}$ e $q_{100\%}$ denotam, respectivamente, o mínimo e o máximo de conjunto de dados.
+
+# Medidas de associação entre duas variáveis
+
+## Associação entre variáveis qualitativas
+
+Para investigar a associação entre duas variáveis qualitativas, podemos utilizar **tabelas de contingência**.
+
+### Exemplo
+
+Vamos considerar as seguintes variáveis
+
+X: salas do terceiro ano do ensino médio
+
+Y: conceitos finais na disciplina de matemática
+
+| Variáveis 	|     A     	|     B     	|     C     	|   Total   	|
+|:---------:	|:---------:	|:---------:	|:---------:	|:---------:	|
+|     A     	|  20 (69%) 	|  16 (49%) 	|  10 (37%) 	|  46 (51%) 	|
+|     B     	|  6 (21%)  	|  6 (18%)  	|   1 (4%)  	|  13 (15%) 	|
+|     C     	|   2 (7%)  	|   1 (3%)  	|  10 (37%) 	|  13 (15%) 	|
+|     D     	|   1 (3%)  	|  10 (30%) 	|  6 (22%)  	|  17 (19%) 	|
+|   Total   	| 29 (100%) 	| 33 (100%) 	| 27 (100%) 	| 89 (100%) 	|
+
+
+Analisando a tabela acima, verificamos que a proporção de alunos com boas notas é maior nas classes I e II. De uma forma mais geral, dizemos que as duas variáveis estão associadas.
+
+## Associação entre variáveis quantitativas
+
+Vamos definir uma medida para quantificar a associação entre duas variáveis quantitativas. Vale lembrar que existem vários tipos de associação. Aqui, vamos considerar o tipo mais simples: *a relação linear*.
+
+Vamos considerar um conjunto de observações bivariadas $(x_1, y_1), ..., (x_n, y_n)$.
+
+O *coeficiente de relação linear* é dado por
+
+\[
+Corr(X, Y) = \frac{1}{n} \sum_{i=1}^{n} \left( \frac{(x_i - \bar{x})}{DP(X)}  \right) \left( \frac{(y_i - \bar{y})}{DP(Y)}  \right).
+\]

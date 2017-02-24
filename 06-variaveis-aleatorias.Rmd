@@ -1,0 +1,103 @@
+---
+title: "Capítulo 05 - Variáveis aleatórias"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-12
+---
+
+# Variáveis aleatórias
+
+Uma variável aleatória (v.a.) é uma função $X$ definida no espaço amostral $\Omega$ e com valores num conjunto de pontos de $\mathbf{R}$. Se esse conjunto de pontos é enumerável, a variável $X$ é discreta. Se o conjunto é não-enumerável, $X$ é contínua.
+
+## Variáveis aleatórias discretas
+
+### Função de probabilidade
+
+**Definição**. À função que, para cada valor possível da variável aleatória discreta $X$, associa a sua probabilidade de ocorrência, damos o nome de função de probabilidade de $X$.
+
+### Esperança de uma variável aleatória discreta
+
+**Definição**. Dada a v. a. discreta $X$, assumindo os valores $x_1, ..., x_n$, chamamos de *esparança* de $X$ o valor 
+
+\[
+E(X) = \sum_{i}^{n}x_i p(x_i) = \sum_{i}^{n}x_i P(X = x_i).
+\]
+
+### Variância de uma variável aleatória discreta
+
+**Definição**. Chamamos de variância da v. a. $X$ o valor
+
+\[
+VAR(X) = \sum_{i}^{n}(x_i - E(X))^2 p(x_i) = E((X - E(X))^2).
+\]
+
+Observe que, abrindo a expressão acima, podemos escrever
+
+\[
+VAR(X) = E(X^2) - (E(X))^2.
+\]
+
+O desvio padrão de $X$ é dado pela raiz quadrada positiva da variância.
+
+### Função de distribuição acumulada
+
+**Definição**. Dada a variável aleatória $X$, chamaremos de função de distribuição acumulada, ou simplesmente função de distribuição, a função
+
+\[
+F(x) = P(X \leq x).
+\]
+
+## Variáveis aleatórias contínuas
+
+Para variáveis aleatórias contínuas não podemos definir uma função de probabilidade, pois
+
+\[
+P(X = x) = 0,
+\]
+para qualquer possível valor $x$ de qualquer v. a. contínua $X$.
+
+Alternativamente, definiremos a chamada *função densidade de probabilidade*. 
+
+### Função densidade de probabilidade
+
+A probabilidade de uma v. a. contínua $X$ com função densidade de probabilidade $f(x)$ pertencer a um intervalo $[a,b]$, denotada por $P(a \leq X \leq b)$, é dada pela área abaixo da curva de $f(x)$ no intervalo $[a,b]$.
+
+Dada uma v. a. contínua $X$, também podemos definir as quantidades $E(X)$ e $VAR(X)$. Não vamos, no entanto, entrar em detalhes sobre como obtê-las. 
+
+Vale lembrar que a definição dada para a função de distribuição acumulada também vale para v. a. contínuas.
+
+## Associação entre variáveis aleatórias
+
+**Definição**. Sejam $X$ e $Y$ duas v. a. discretas quaisquer. Chamamos de função de probabilidade conjunta a função dada por
+
+\[
+p(x, y) = P(X = x, Y = y).
+\]
+
+Analogamente, podemos pensar na função de densidade conjunta no caso contínuo, denotada por $f(x,y)$.
+
+**Definição**. Dizemos que as variáveis $X$ e $Y$ são independentes se, e somente se,
+
+\[
+p(x, y) = P(X = x, Y = y) = P(X = x)P(Y = y), \forall x, y.
+\]
+
+e, analogamente, no caso contínuo, se
+
+\[
+f(x, y) = f(x)f(y), \quad  \forall x, y.
+\]
+
+**Definição**. Sejam $X$ e $Y$ v. a. discretas. A distribuição condicional de $X|Y=y$ é dada por
+
+\[
+P(X = x | Y = y) = \frac{P(X = x, Y = y)}{P(Y = y)}
+\]
+
+Analogamente, no caso contínuo, temos
+
+\[
+f(x|y) = \frac{f(x, y)}{f(y)}.
+\]

@@ -1,0 +1,58 @@
+---
+title: "Capítulo 9 - Estimação pontual"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-20
+---
+
+
+
+# Estimação pontual
+
+**Definição**. Um parâmetro é uma medida utilizada para descrever uma característica da população.
+
+**Definição**. Um estimador é uma função da amostra $(X_1, ..., X_n)$ definida com o objetivo de se fazer inferência sobre um parâmetro populacional.
+
+## Propriedades de um estimador
+
+**Definição**. Um estimador $T$ é dito *não-enviesado* (não-viciado) para $\theta$ se
+
+\[
+E(T) = \theta, \quad \text{para todo } \theta.
+\]
+
+**Definição**. Um estimador não-enviesado $T$ é dito consistente se
+
+\[
+VAR(T) \longrightarrow 0 \quad \text{quando} \quad n \longrightarrow +\infty.
+\]
+
+**Definição**. Se $T$ e $S$ são dois estimadores não-enviesados de $\theta$ e 
+
+\[
+VAR(T) < VAR(S),
+\]
+então dizemos que $T$ é mais eficiente que $S$.
+
+**Definição**. Chama-se *erro quadrático médio* do estimador $T$ o valor
+
+\[
+EQM(T, \theta) = VAR(T) + (Viés(T))^2,
+\]
+em que
+
+\[
+Viés(T) = E(T) - \theta.
+\]
+
+## Estimador de máxima verossimilhança
+
+**Definição**. Seja $X_1, ..., X_n$ uma a. a. de uma v. a. $X$. A função de verossimilhança é definida por 
+
+\[
+L(\theta) = L(\theta; x_1, ..., x_n) = f(x_1; \theta) ... f(x_n; \theta).
+\]
+
+O estimador de máxima verossimilhança é o valor $\hat{\theta}$ que maximiza $L(\theta)$.

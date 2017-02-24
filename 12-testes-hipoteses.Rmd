@@ -1,0 +1,120 @@
+---
+title: "Capítulo 11 - Testes de hipóteses"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-22
+---
+
+## Construçao de um teste de hipóteses
+
+Vamos motivar a construçãode um teste de hipóteses a partir do seguinte exemplo.
+
+Há o interesse em saber se um astrólogo consegue acertar o signo de pessoas escolhidas ao acaso a partir de informações sobre a personalidade de cada uma delas.
+
+**Pergunta**: o índice de acerto do astrólogo é maior que aquele que esperaríamos se ele estivesse respondendo ao acaso?
+
+Temos que a probabilidade de acertar um signo ao acaso é $\frac{1}[12]$.
+
+Vamos supor que uma amostra de 100 pessoas de uma certa população foi coletada e informações sobre a personalidade de cada uma foram disponibilizadas. Sendo assim, baseado nessas informações, o astrólogo vai inferir o signo da pessoa e, então, podemos definir, para $i = 1, ..., n$, a seguinte variável
+
+\[
+X_i = 1, \text{ se ele acerta o signo da i-ésima pessoa e} \quad X_i = 0, \text{ caso contrário.}
+\]
+
+Portanto, $X_i \sim Bernoulli(p)$, $i = 1, ..., n$, e queremos fazer inferência sobre $p$. 
+
+### Hipóteses
+
+Dado o problema apresentado, podemos pensar em testar as seguintes hipóteses
+
+$H_0$: "não existe relação entre o signo e a personalidade da pessoa" ou "o índice de acerto do astrólogo não é melhor do que o acaso (1/12)"; e
+
+$H_A$: "existe relação entre o signo e a personalidade da pessoa" ou "o índice de acerto do astrólogo é melhor do que o acaso (1/12)".
+
+Matematicamente, podemos reescrever $H_0$ e $H_A$ como
+
+$H_0: p \leq \frac{1}{2}$
+
+$H_A: p > \frac{1}{2}$.
+
+No contexto de testes de hipóteses, chamamos $H_0$ de *hipótese nula* e $H_A$ de *hipótese alternativa*. 
+
+### Erros
+
+Ao escolher por uma das hipóteses, quais erros podemos cometer?
+
+**ERRO DO TIPO I**: rejeitar a hipótese nula dada que ela é verdadeira.
+
+**ERRO DO TIPO II**: aceitar a hipótese nula dado que ela é falsa. 
+
+Podemos calcular as probabilidades de cada um destes errros:
+
+$\alpha$: probabilidade do erro do tipo I
+
+$\beta$: probabilidade do erro do tipo II
+
+A quantidade $\alpha$ também é conhecida como *nível de significância do teste*.
+
+### Estatística do teste
+
+O procedimento usual de um teste de hipóteses consiste em encontrar um intervalo chamado de *Região crítica* (RC), tal que
+
+\[
+\hat{p} \in RC \longrightarrow \text{rejeitamos } H_0,
+\]
+em que $\hat{p}$ é uma estatimativa de $p$.
+
+Para isso, precisamos definir a estatística do teste. Neste exemplo, essa estatística é dada por
+
+\[
+\hat{p} = \frac{\sum_{i=1}^{n}X_i}{n},
+\]
+de tal forma que
+
+\[
+\hat{p} \sim N\left( p, \frac{p(1-p)}{n}  \right).
+\]
+
+### Construção da região crítica e conclusão do teste
+
+Temos que
+
+\[
+P\left(\hat{p} \in RC \hspace{2mm} | \hspace{2mm} H_o \text{ é verdadeira}\right) = \alpha
+\]
+\
+P\left(\hat{p} \geq c \hspace{2mm} | \hspace{2mm} p = \frac{1}{12}\right) = \alpha
+\]
+
+Realizando a padronização normal, temos
+
+\[
+P\left(Z \geq \frac{c - \frac{1}{12}}{0,0276} \hspace{2mm} | \hspace{2mm} p = \frac{1}{12}\right) = \alpha.
+\]
+
+Se fixarmos $\alpha = 0.05$, temos que
+
+\[
+\frac{c - \frac{1}{12}}{0,0276} = 1,645
+\]
+e, portanto, $c = 0,1287$.
+
+Assim, 
+
+\[
+RC = [12,87\%, 100\%].
+\]
+
+Dessa forma, se a estimativa $\hat{p}$ for maior que 12,87%, rejeitamos $H_0$ com um nível de significância de 5%.
+
+## Poder de um teste
+
+Chamamos de *poder de um teste* a probabilidade de rejeitar $H_0$ dado que ela é falsa, isto é, 
+
+\[
+P\left(T(X_1, ..., X_n) \in RC \hspace{2mm} | \hspace{2mm} H_0 \text{ é falsa}\right) = 1 - \beta,
+\]
+
+em que $T$ é a estatística do teste e $\beta$ é o erro do tipo II.

@@ -1,0 +1,77 @@
+---
+title: "Capítulo 1 - Tipos de variáveis e distribuição de frequência"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2015-01-19
+---
+
+# Análise descritiva
+
+Os principais objetivos da análise descritiva são:
+
+- analisar o comportamento das variáveis em estudo; e
+- buscar indícios de associação entre as variáveis.
+
+## Tipos de variáveis
+
+Uma etapa primordial de qualquer análise estatística é verificar qual metodologia é mais adequada para o conjunto de dados sob análise. Para isso, é essencial conhecermos a natureza das variáveis presentes no estudo.
+
+### Motivação
+
+Uma médica do Instituto do Coração está interessada em associar certas características dos seus pacientes com a ocorrência de extrassístoles (batimentos cardíacos fora do ritmo). Com esse objetivo em mente, com cada paciente, ela realizou uma entrevista e uma série de exames. Destacamos a seguir algumas das variáveis coletadas
+
+- Idade (anos)
+- Sexo (M, F)
+- Tabagismo (fuma ou não fuma)
+- Consumo de álcool (ml por semana)
+- Fração de ejeção (%)
+- Frequência cardíaca (bpm)
+- Presença de extrassístoles (sim ou não)
+
+Observe que algumas variáveis apresentam, como possíveis realizações, uma qualidade (atributo) do paciente, enquanto outras apresentam, como possíveis realizações, valores resultantes de uma contagem ou mensuração. As variáveis do primeiro tipo são chamadas *qualitativas* e, as do segundo, *quantitativas*.
+
+### Definição
+
+**Variáveis qualitativas** apresentam como possíveis realizações uma qualidade ou atributo. Se os possíveis resultados não tiverem nenhum tipo de ordenação, chamamos a variável de **qualitativa nominal**. Já as variáveis qualitativas cujos resultados podem ser ordenados são chamadas de **qualitativas ordinais**.
+
+**Variáveis quantitativas** apresentam como possíveis realizações valores (números) resultantes de uma contagem ou mensuração. Se o conjunto de possíveis valores dessa variável é finito ou enumerável, a variável é chamada de **quantitativa discreta**. Se esse conjunto é não-enumerável (um subconjunto dos números reais), a variável é chamada de **quantitativa contínua**.
+
+**Observação**: na prática, para o ajuste de modelos estatísticos, as variáveis qualitativas são transformadas em variáveis quantitativas discretas. Por exemplo, se considerarmos a variável sexo, as categorias "feminino" e "masculino" são transformadas em "0" e "1".
+
+## Distribuição de frequência
+
+Com o objetivo de analisar o comportamento das variáveis em estudo, uma ideia inicial é estudar como os valores de cada variável estão distribuídos. Uma maneira simples de se fazer isto é construir uma *tabela de frequências*.
+
+### Exemplo 1
+
+Vamos considerar as seguintes tabelas de frequência para a variável qualitativa
+
+X: diretor preferido entre as opções {Tarantino, Scorsese, Nolan, Fincher}.
+
+
+|  Diretor  | Frequência $(n_i)$ | Proporção $(f_i)$ | Proporção (%) |
+|:---------:|:----------------:|:---------------:|:-------------:|
+| Tarantino |        33        |       0,33      |      33%      |
+|  Scorsese |        22        |       0,22      |      22%      |
+|   Nolan   |        35        |       0,35      |      35%      |
+| Fincher   |        10        |       0,1       |      10%      |
+|   **Total**   |        **100**       |        **1**        |      **100%**     |
+
+
+A **frequência absoluta** $(n_i)$ representa quantas observações há em cada categoria da variável.
+
+A **proporção** ou **frequência relativa** é a razão entre a frequência absoluta e o total de observações $(n)$. Esta medida é acrescentada à tabela para facilitar a comparação da frequência entre as categorias da variável e possibilita comparar tabelas de frequências (para uma mesma variável) com totais $(n)$ diferentes.
+
+Também podemos construir tabelas de frequências para variáveis quantitativas. Em geral, é necessário dividir o intervalo de possíveis valores dessa variável em classes.
+
+### Exemplo 2
+
+Vamos considerar a variável *fração de ejeção* do banco de dados do Instuto do Coração. Lembrando que essa variável pode variar entre 0 e 100%, vamos dividir esse intervalo em duas classes: [0, 55) e [55, 100].
+
+|   Classes   | Frequência $(n_i)$ | Proporção $(n_i)$ | Proporção (%) |
+|:-----------:|:------------------:|:-----------------:|:-------------:|
+|   [0,55)  |         237        |       0,798       |     79,8%     |
+| [55,100] |         60         |       0,202       |     20,2%     |
+|    **Total**    |         **297**        |         **1**         |      **100%**     |

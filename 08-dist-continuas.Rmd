@@ -1,0 +1,64 @@
+---
+title: "Capítulo 7 - Distribuições contínuas"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-12
+---
+
+## Distribuição Uniforme
+
+Sejam $a$ e $b$ números reais e $X$ uma variável aleatória com função densidade de probabilidade dada por
+
+\[
+f(x) = \frac{1}{b-a}, \quad a < x < b.
+\]
+
+Dizemos que $X$ segue a distribuição uniforme contínua no intervalo $(a,b)$. Simbolicamente, $X \sim U(a,b)$. 
+
+Temos que $E(X) = \frac{a + b}{2}$ e $VAR(X) = \frac{(b-a)^2}{12}$.
+
+## Distribuição Normal
+
+Seja $X$ uma variável aleatória contínua com função densidade de probabilidade dada por
+
+\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\]
+
+Dizemos que $X$ segue a distribuição Normal com média $\mu \in \mathbf{R}$ e variância $\sigma^2 > 0$. Simbolicamente, $X \sim N(\mu, \sigma^2)$.
+
+### Normal padrão
+
+Seja $X \sim N(\mu, \sigma^2)$ e $Z$ uma v. a. definida por
+
+\[
+Z = \frac{X - \mu}{\sigma}.
+\]
+
+Então, $Z \sim N(0,1)$ é dita ser uma Normal padrão.
+
+## Distribuição Exponencial
+
+Seja $\lambda > 0$ e $X$ uma variável aleatória com função densidade de probabilidade dada por
+
+\[
+f(x) = \lambda e^{-\lambda x}, \quad x > 0.
+\]
+
+Dizemos então que $X$ segue a distribuição exponencial. Simbolicamente, $X \sim Exp(\lambda)$. 
+
+Temos que $E(X) = \frac{1}{\lambda}$ e $VAR(X) = \frac{1}{\lambda^2}$.
+
+## Distribuição Gama
+
+Sejam $a$ e $b$ números reais positivos e $X$ uma variável aleatória com função densidade de probabilidade dada por
+
+\[
+f(x) = \frac{b^a}{\Gamma (a)} x^{a-1} e^{-b x}, \quad x > 0.
+\]
+
+Dizemos então que $X$ segue a distribuição Gama. Simbolicamente, $X \sim Gama(a, b)$. 
+
+Temos que $E(X) = \frac{a}{b}$ e $VAR(X) = \frac{a}{b^2}$.

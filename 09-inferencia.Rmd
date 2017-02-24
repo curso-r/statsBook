@@ -1,0 +1,26 @@
+---
+title: "Capítulo 8 - Inferência Estatística"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-12
+---
+
+## Inferência Estatística
+
+O principal objetivo da análise inferencial é fazer afirmações sobre alguma característica de interesse da população.
+
+**Definição.** População é o conjunto de todos os elementos ou resultados sob investigação. Uma amostra é qualquer subconjunto da população. A cada elemento da população damos o nome de unidade amostral.
+
+## Amostragem
+
+Podemos dividir os procedimentos científicos de obtenção de dados amostrais em três grandes grupos.
+
+- Levantamento amostrais
+- Planejamento de experimento
+- Levantamento observacional
+
+Aqui, utilizaremos a técnica de amostragem conhecida por amostragem aleatória simples.
+
+**Definição.** Uma amostra aleatória simples de tamanho $n$ de uma variável aleatória $X$ qualquer é o conjunto de $n$ variáveis aleatórias independentes $X_1, ..., X_n$ cada uma com a mesma distribuição de $X$.

@@ -1,0 +1,66 @@
+---
+title: "Capítulo 0 -  Background matemático"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2015-01-19
+---
+
+## Base matemátiva
+
+### O que são variáveis?
+
+Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z...). Exemplos:
+
+- Velocidade marcada no velocímetro de um carro.
+- Cor de uma bola retirada de uma urna.
+- Número de gols sofridos pelo São Paulo no próximo jogo.
+
+Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de *variável aleatória*.
+
+### Conjuntos
+
+Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C ...) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:
+
+- {A, B, C}
+- {1, 3, 5}
+- {x: x é par}
+
+Conjuntos importantes para o curso:
+
+- $\mathbb{N} = \{0, 1, 2, ...\}$ --- conjunto dos números naturais
+- $\mathbb{R} = (-\infty, +\infty)$ --- conjunto dos números reais
+
+### Somatórios e produtórios
+
+Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:
+
+$\sum_{i=1}^{n} i = 1 + 2 + ... + n$.
+
+Dessa forma, temos que
+
+$\sum_{i=1}^{10}x = 1 + 2 + ... + 10$
+
+ou
+
+$\sum_{i=1}^{10} X = X_1 + X_2 + X_3 + ... + X_{10}$.
+
+De forma análoga, temos a seguinte notação para produtórios:
+
+$\prod_{i=1}^{n} i = 1 \times 2 \times ... \times n$.
+
+Dessa forma, temos que
+
+$\prod_{i=1}^{10}x = 1 \times 2 \times ... \times 10$
+
+ou
+
+$\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}$.
+
+### Vetores
+
+Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas. 
+
+Notação: $X = (X_1, X_2, ..., X_n)$.
+

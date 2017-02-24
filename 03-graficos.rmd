@@ -1,0 +1,258 @@
+---
+title: "Capítulo 03 - Gráficos"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-06
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(pander)
+library(ggplot2)
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(vcd)
+panderOptions("table.style", "rmarkdown")
+```
+
+## Introdução 
+
+- Analisar um gráfico é uma maneira rápida e concisa de visualizar certas informações contidas em um conjunto de observações. 
+- O gráfico certo a ser utilizado em cada situação depende da informação que queremos visualizar e do tipo de variável que estamos trabalhando.
+- Um gráfico mal muitas vezes falha em trazer com clareza a informação que queremos visualizar e, em alguns casos, pode levar a falsas evidências.
+
+## Gráficos de barras
+
+Amostra: estudantes de estatística
+
+X: cor do cabelo --- Y: cor dos olhos --- W: sexo
+
+```{r, warning=FALSE, echo=FALSE}
+
+HairEyeColor %>% 
+  as.data.frame %>%
+  ggplot +
+  geom_bar(aes(x = Hair, y = Freq, fill = Hair), stat = "identity", width = 0.6) +
+  labs(y = "Frequência", x = "Cor do cabelo") +
+  scale_x_discrete(labels = c("Preto", "Castanho", "Ruivo", "Loiro")) +
+  scale_fill_manual(values = c("black", "#663333", "brown", "#FFCC00")) +
+  guides(fill = FALSE)
+
+```
+
+
+Podemos associar a variável "cor dos olhos" à cor das barras do gráfico.
+
+```{r, warning=FALSE, echo=FALSE}
+
+HairEyeColor %>% 
+  as.data.frame %>%
+  ggplot +
+  geom_bar(aes(x = Hair, y = Freq, fill = Eye), stat = "identity", width = 0.6, 
+           position = "dodge") +
+  labs(y = "Frequência", x = "Cor do cabelo") +
+  scale_x_discrete(labels = c("Preto", "Castanho", "Ruivo", "Loiro")) +
+  scale_fill_manual(values = c("#663333", "#0066CC", "#996666", "#669933"), 
+                    labels = c("Castanho escuro", "Azul", "Castanho claro", "Verde"))
+
+```
+
+
+Além disso, podemos dividir o gráfico pela variável "sexo" e comparar as frequências para homens e mulheres.
+
+
+```{r, warning=FALSE, echo=FALSE}
+
+sex_labels <- list(
+  'Male'="Masculino",
+  'Female'="Feminino"
+)
+
+sex_labeller <- function(variable,value){
+  return(sex_labels[value])
+}
+
+HairEyeColor %>% 
+  as.data.frame %>%
+  ggplot +
+  geom_bar(aes(x = Hair, y = Freq, fill = Eye), stat = "identity", width = 0.6, 
+           position = "dodge") +
+  facet_grid(Sex ~ ., labeller=sex_labeller) +
+  labs(y = "Frequência", x = "Cor do cabelo") +
+  scale_x_discrete(labels = c("Preto", "Castanho", "Ruivo", "Loiro")) +
+  scale_fill_manual(values = c("#663333", "#0066CC", "#996666", "#669933"), 
+                    labels = c("Castanho escuro", "Azul", "Castanho claro", "Verde"))
+
+```
+
+
+## Histogramas
+
+Amostra de tamanho 400 de uma distribuição normal com média 170 e desvio padrão 8.
+
+```{r, warning=FALSE, echo=FALSE}
+
+r <- rnorm(400, 170, 8)
+
+r %>% 
+  data.frame(x = .) %>% 
+  ggplot +
+  geom_histogram(aes(x=x), fill = "white", color="black", binwidth=3) +
+  labs(x = "", y = "Frequência")
+
+```
+
+
+Em vez de representar a frequência no eixo y, podemos optar pela densidade, definida pela razão entre a proporção e a amplitude de cada classe. Um histograma construído dessa forma tem área 1.
+
+```{r, warning=FALSE, echo=FALSE}
+
+r %>% 
+  data.frame(x = .) %>% 
+  ggplot +
+  geom_histogram(aes(x=x, y = ..density..), fill = "white", color="black", binwidth=3) +
+  labs(x = "", y = "Densidade")
+
+```
+
+
+Assimetria à direita
+
+```{r, warning=FALSE, echo=FALSE, message = FALSE}
+
+rbeta(1000, 2, 5) %>% 
+  data.frame(x = .) %>% 
+  ggplot +
+  geom_histogram(aes(x=x, y = ..density..), fill = "white", color="black") +
+  labs(x = "", y = "Densidade")
+
+```
+
+
+Assimetria à esquerda
+
+```{r, warning=FALSE, echo=FALSE, message = FALSE}
+
+rbeta(1000, 5, 2) %>% 
+  data.frame(x = .) %>% 
+  ggplot +
+  geom_histogram(aes(x=x, y = ..density..), fill = "white", color="black") +
+  labs(x = "", y = "Densidade")
+
+```
+
+## Boxplots
+
+Dados da temporada de Baseball de 1986 (EUA)
+
+```{r, warning=FALSE, echo=FALSE}
+
+Baseball %>% 
+  ggplot +
+  geom_boxplot(aes(y = homer86, x = league86)) +
+  labs(x = "Liga", y = "Número de Home runs")
+
+```
+
+Dados da temporada de Baseball de 1986 (EUA)
+
+```{r, warning=FALSE, echo=FALSE}
+
+Baseball %>% 
+  ggplot +
+  geom_boxplot(aes(y = homer86, x = league86, fill = div86), position = "dodge") +
+  labs(x = "Liga", y = "Número de Home runs")
+
+```
+
+## Gráficos de dispersão
+
+```{r, warning=FALSE, echo=FALSE}
+
+Baseball %>%
+  ggplot +
+  geom_point(aes(y = homer86, x = hits86)) +
+  labs(x = "Número de rebatidas", y = "Número de Home runs")
+
+```
+
+
+```{r, warning=FALSE, echo=FALSE}
+
+Baseball %>%
+  ggplot +
+  geom_point(aes(y = runs86, x = hits86)) +
+  labs(x = "Número de rebatidas", y = "Número de corridas")
+
+```
+
+## Gráfico de uma série
+
+Vazão do rio Nilo de 1871 a 1970.
+
+```{r, warning=FALSE, echo=FALSE}
+
+Nile %>%
+  as.vector %>% 
+  data.frame(vazao = ., ano = 1871:1970) %>%
+  ggplot +
+  geom_line(aes(x = ano, y = vazao)) +
+  labs(x = "Ano", y = "Vazão")
+
+```
+
+Número de mortes acidentais nos EUA de 1973 a 1979.
+
+```{r, warning=FALSE, echo=FALSE}
+
+USAccDeaths %>%
+  as.vector %>% 
+  data.frame(mortes = ., 
+             ano = seq(parse_date_time('1973-01', "ym"),
+                       parse_date_time('1978-12', "ym"), by = 'months')) %>%
+  ggplot +
+  geom_line(aes(x = ano, y = mortes)) +
+  labs(x = "Ano", y = "Número de mortes acidentais")
+
+```
+
+## Gráficos mal construídos
+
+```{r, warning=FALSE, echo=FALSE}
+
+teste <- read.csv(file="dados_times.csv")
+
+pie(x = teste$torcedores, labels = teste$time)
+  
+```
+
+
+```{r, warning=FALSE, echo=FALSE}
+
+boxplot(1)
+  
+```
+
+
+```{r, warning=FALSE, echo=FALSE}
+
+data.frame(pref = c(45, 30, 25), partido = c("PSDB", "PT", "PMDB")) %>% 
+  ggplot +
+  geom_bar(aes(x = partido, y = pref), stat = "identity", width = 0.4, fill = "white",
+           color = "black") +
+   coord_cartesian(ylim=c(20,60)) +
+  labs(x = "Partido", y = "Preferência")
+  
+```
+
+```{r, warning=FALSE, echo=FALSE}
+
+data.frame(pref = c(45, 30, 25), partido = c("PSDB", "PT", "PMDB")) %>% 
+  ggplot +
+  geom_bar(aes(x = partido, y = pref), stat = "identity", width = 0.4, fill = "white",
+           color = "black") +
+  labs(x = "Partido", y = "Preferência")
+  
+```

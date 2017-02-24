@@ -1,0 +1,52 @@
+---
+title: "Capítulo 06 - Distribuições discretas"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-12
+---
+
+\usepackage{amsmath}
+
+## Distribuição Uniforme
+
+A variável aleatória $X$, assumindo os valores $x_1, ..., x_n$, tem distribuição uniforme se
+
+\[
+p(x_i) = P(X = x_i) = \frac{1}{n}, \forall 1, ..., n.
+\]
+
+## Distribuição Bernoulli
+
+A variável aleatória $X$, que assume apenas os valores 0 ou 1, com função de probabilidade dada por $p(x) = p$, se $x = 1$, e $p(x) = 1 - p$, se $x = 0$, é chamada v. a. de Bernoulli. Aqui, consideramos $0 < p < 1$.
+
+Temos que $E(X) = p$ e $VAR(X) = p(1 - p)$.
+
+## Distribuição Binomial
+
+Sejam $X_1, ..., X_n$ $n$ variáveis aleatórias independentes com distribuição $Bernoulli(p)$. A variável aleatória $Y$ definida por
+
+\[
+Y = \sum_{i=1}^{n} X_i
+\]
+
+tem distribuição Binomial. Simbolicamente, escrevemos $Y \sim Binomial(n, p)$.
+
+A função de probabilidade de $Y$ é dada por
+
+\[
+p(x) = P(X = x) = \binom{n}{p} p^x (1-p)^{n-x}.
+\]
+
+Temos que $E(X) = np$ e $VAR(X) = np(1 - p)$.
+
+## Distribuição de Poisson
+
+Dizemos que a v. a. $X$ tem distribuição Poisson com parâmetro $\lambda > 0$ se
+
+\[
+P(X = x) = \frac{\exp(- \lambda)\lambda^x}{x!}, \quad x = 0, 1, 2, ...
+\]
+
+Temos que $E(X) = VAR(X) = \lambda$.

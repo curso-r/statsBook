@@ -1,0 +1,49 @@
+---
+title: "Capítulo 10 - Estimação intevalar"
+output:
+  html_document:
+    toc_depth: 3
+    toc: yes
+date: 2016-01-21
+---
+
+## Construção de um IC
+
+Como exemplo, vamos construir um intervalo de confiança para a média populacional.
+
+Vamos supor que $X_1, ..., X_n$ seja uma a. a. da v. a. $X \sim N(\mu, \sigma^2)$. A partir desta amostra, queremos construir um intervalo de confiança para $\mu$, isto é, um intervalo que tenha grande probabilidade de conter o verdadeiro valor de $\mu$.
+
+Sabemos que $\bar{X}$ é um bom estimador para $\mu$. Sendo assim, é razoável pensar em minimizar o erro dado por
+
+\[
+\text{erro } = |\bar{X} - \mu|.
+\]
+
+Mais precisamente, podemos que a probabilidade desse erro ser menor que um determinado $\epsilon$ seja grande, digamos, 95%. Simbolicamente, temos
+
+\[
+P(|\bar{X} - \mu| < \epsilon) = 95\%.
+\]
+
+Desenvolvendo a expressão acima, temos que
+
+\[
+P(\bar{X} - \epsilon < \mu < \bar{X} + \epsilon) = 95\%.
+\]
+
+Portanto, um intervalo para $\mu$ com *confiança* de 95% é dado por $(\bar{X} - \epsilon, \bar{X} + \epsilon)$. Não é difícil mostrar que, neste caso,
+
+\[
+\epsilon = z(95\%) \sqrt{\frac{\sigma^2}{n}},
+\]
+em que $z(95\%)$ é o número que satisfaz 
+
+\[
+P(-z(95\%) < Z < z(95\%)) = 95\%.
+\]
+
+Neste contexto, o valor $95\%$ é chamado *coeficiente de confiança* do intervalo. Em um caso geral, denotando essa quantidade por $\gamma$, o intervalo de confiança para a média $\mu$ é dado por
+
+\[
+IC(\mu, \gamma) = \left(\bar{X} - z(\gamma) \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z(\gamma) \sqrt{\frac{\sigma^2}{n}}\right).
+\]
