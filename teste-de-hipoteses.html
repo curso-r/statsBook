@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="graficos.html">
-<link rel="next" href="variaveis-aleatorias.html">
+<link rel="prev" href="intervalos-de-confianca.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -184,92 +184,84 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probabilidade" class="section level1">
-<h1><span class="header-section-number">Capítulo 5</span> Probabilidade</h1>
-<p>A interpretação da probabilidade pode variar de pessoa para pessoa. Para alguns, a probabilidade é vista como o limite de uma sequência de frequências relativas. Essa é a visão frequentista da probabilidade. Para outros, a probabilidade é uma medida subjetiva de incerteza. Essa é a visão Bayesiana.</p>
-<div id="espaco-amostral" class="section level2">
-<h2><span class="header-section-number">5.1</span> Espaço amostral</h2>
-<p><strong>Definição</strong>. O espaço amostral, comumente denotado por <span class="math inline">\(\Omega\)</span>, é o conjunto de todos os possíveis resultados de um <em>experimento aleatório</em>.</p>
-<p>Chamamos de <strong>evento</strong> qualquer subconjunto de interesse do espaço amostral.</p>
-<p><strong>Definição</strong>. Chamamos de evento complementar do evento <span class="math inline">\(A\)</span>, simbolicamente <span class="math inline">\(A^c\)</span>, o conjunto formado por todos os elementos que não pertencem a <span class="math inline">\(A\)</span>.</p>
-</div>
-<div id="uniao-e-interseccao-de-eventos" class="section level2">
-<h2><span class="header-section-number">5.2</span> União e intersecção de eventos</h2>
-<p><strong>Definição</strong>. Chamamos de <em>união</em> dos eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, simbolicamente <span class="math inline">\(A \cup B\)</span>, o conjunto formado pelos elementos que pertencem ao evento <span class="math inline">\(A\)</span> ou ao evento <span class="math inline">\(B\)</span>.</p>
-<p><strong>Definição</strong>. Chamamos de intersecção dos eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, simbolicamente, <span class="math inline">\(A \cap B\)</span>, o conjunto formado pelos pontos que pertencem ao evento <span class="math inline">\(A\)</span> e ao evento <span class="math inline">\(B\)</span>.</p>
-</div>
-<div id="particao-de-um-espaco-amostral" class="section level2">
-<h2><span class="header-section-number">5.3</span> Partição de um espaço amostral</h2>
-<p><strong>Definição</strong>. Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> uma coleção de eventos tais que <span class="math inline">\(A_1 \cup ...\cup A_n = \Omega\)</span> e <span class="math inline">\(A_1 \cap A_n = \varnothing\)</span>, <span class="math inline">\(\forall i \neq j\)</span>. Chamamos essa coleção de <strong>partição do espaço amostral</strong>.</p>
-</div>
-<div id="algumas-propriedades" class="section level2">
-<h2><span class="header-section-number">5.4</span> Algumas propriedades</h2>
-<p>Seja <span class="math inline">\(A\)</span> um sub-conjunto de <span class="math inline">\(\Omega\)</span>.</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span> e <span class="math inline">\(P(\varnothing) = 0\)</span></li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></li>
-</ol>
-</div>
-<div id="chance" class="section level2">
-<h2><span class="header-section-number">5.5</span> Chance</h2>
-<p>A chance do evento <span class="math inline">\(A\)</span> é definida pela razão entre as probabilidades de ocorrência e não-ocorrência do evento, isto é,</p>
+<div id="teste-de-hipoteses" class="section level1">
+<h1><span class="header-section-number">Capítulo 12</span> Teste de hipóteses</h1>
+<div id="construcao-de-um-teste-de-hipoteses" class="section level2">
+<h2><span class="header-section-number">12.1</span> Construçao de um teste de hipóteses</h2>
+<p>Vamos motivar a construçãode um teste de hipóteses a partir do seguinte exemplo.</p>
+<p>Há o interesse em saber se um astrólogo consegue acertar o signo de pessoas escolhidas ao acaso a partir de informações sobre a personalidade de cada uma delas.</p>
+<p><strong>Pergunta</strong>: o índice de acerto do astrólogo é maior que aquele que esperaríamos se ele estivesse respondendo ao acaso?</p>
+<p>Temos que a probabilidade de acertar um signo ao acaso é <span class="math inline">\(\frac{1}[12]\)</span>.</p>
+<p>Vamos supor que uma amostra de 100 pessoas de uma certa população foi coletada e informações sobre a personalidade de cada uma foram disponibilizadas. Sendo assim, baseado nessas informações, o astrólogo vai inferir o signo da pessoa e, então, podemos definir, para <span class="math inline">\(i = 1, ..., n\)</span>, a seguinte variável</p>
 <p><span class="math display">\[
-\text{Chance de A} = \frac{P(A)}{P(A^c)} = \frac{P(\text{A ocorrer})}{P(\text{A não ocorrer})}.
+X_i = 1, \text{ se ele acerta o signo da i-ésima pessoa e} \quad X_i = 0, \text{ caso contrário.}
 \]</span></p>
-<p>Observe que a chance de um evento pode variar de 0 a <span class="math inline">\(+ \infty\)</span>.</p>
+<p>Portanto, <span class="math inline">\(X_i \sim Bernoulli(p)\)</span>, <span class="math inline">\(i = 1, ..., n\)</span>, e queremos fazer inferência sobre <span class="math inline">\(p\)</span>.</p>
+<div id="hipoteses" class="section level3">
+<h3><span class="header-section-number">12.1.1</span> Hipóteses</h3>
+<p>Dado o problema apresentado, podemos pensar em testar as seguintes hipóteses</p>
+<p><span class="math inline">\(H_0\)</span>: “não existe relação entre o signo e a personalidade da pessoa” ou “o índice de acerto do astrólogo não é melhor do que o acaso (1/12)”; e</p>
+<p><span class="math inline">\(H_A\)</span>: “existe relação entre o signo e a personalidade da pessoa” ou “o índice de acerto do astrólogo é melhor do que o acaso (1/12)”.</p>
+<p>Matematicamente, podemos reescrever <span class="math inline">\(H_0\)</span> e <span class="math inline">\(H_A\)</span> como</p>
+<p><span class="math inline">\(H_0: p \leq \frac{1}{2}\)</span></p>
+<p><span class="math inline">\(H_A: p &gt; \frac{1}{2}\)</span>.</p>
+<p>No contexto de testes de hipóteses, chamamos <span class="math inline">\(H_0\)</span> de <em>hipótese nula</em> e <span class="math inline">\(H_A\)</span> de <em>hipótese alternativa</em>.</p>
+</div>
+<div id="erros" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> Erros</h3>
+<p>Ao escolher por uma das hipóteses, quais erros podemos cometer?</p>
+<p><strong>ERRO DO TIPO I</strong>: rejeitar a hipótese nula dada que ela é verdadeira.</p>
+<p><strong>ERRO DO TIPO II</strong>: aceitar a hipótese nula dado que ela é falsa.</p>
+<p>Podemos calcular as probabilidades de cada um destes errros:</p>
+<p><span class="math inline">\(\alpha\)</span>: probabilidade do erro do tipo I</p>
+<p><span class="math inline">\(\beta\)</span>: probabilidade do erro do tipo II</p>
+<p>A quantidade <span class="math inline">\(\alpha\)</span> também é conhecida como <em>nível de significância do teste</em>.</p>
+</div>
+<div id="estatistica-do-teste" class="section level3">
+<h3><span class="header-section-number">12.1.3</span> Estatística do teste</h3>
+<p>O procedimento usual de um teste de hipóteses consiste em encontrar um intervalo chamado de <em>Região crítica</em> (RC), tal que</p>
+<p><span class="math display">\[
+\hat{p} \in RC \longrightarrow \text{rejeitamos } H_0,
+\]</span> em que <span class="math inline">\(\hat{p}\)</span> é uma estatimativa de <span class="math inline">\(p\)</span>.</p>
+<p>Para isso, precisamos definir a estatística do teste. Neste exemplo, essa estatística é dada por</p>
+<p><span class="math display">\[
+\hat{p} = \frac{\sum_{i=1}^{n}X_i}{n},
+\]</span> de tal forma que</p>
+<p><span class="math display">\[
+\hat{p} \sim N\left( p, \frac{p(1-p)}{n}  \right).
+\]</span></p>
+</div>
+<div id="construcao-da-regiao-critica-e-conclusao-do-teste" class="section level3">
+<h3><span class="header-section-number">12.1.4</span> Construção da região crítica e conclusão do teste</h3>
+<p>Temos que</p>
+<p><span class="math display">\[
+P\left(\hat{p} \in RC \hspace{2mm} | \hspace{2mm} H_o \text{ é verdadeira}\right) = \alpha
+\]</span><br />
+P( c  |  p = ) = ]</p>
+<p>Realizando a padronização normal, temos</p>
+<p><span class="math display">\[
+P\left(Z \geq \frac{c - \frac{1}{12}}{0,0276} \hspace{2mm} | \hspace{2mm} p = \frac{1}{12}\right) = \alpha.
+\]</span></p>
+<p>Se fixarmos <span class="math inline">\(\alpha = 0.05\)</span>, temos que</p>
+<p><span class="math display">\[
+\frac{c - \frac{1}{12}}{0,0276} = 1,645
+\]</span> e, portanto, <span class="math inline">\(c = 0,1287\)</span>.</p>
+<p>Assim,</p>
+<p><span class="math display">\[
+RC = [12,87\%, 100\%].
+\]</span></p>
+<p>Dessa forma, se a estimativa <span class="math inline">\(\hat{p}\)</span> for maior que 12,87%, rejeitamos <span class="math inline">\(H_0\)</span> com um nível de significância de 5%.</p>
+</div>
+</div>
+<div id="poder-de-um-teste" class="section level2">
+<h2><span class="header-section-number">12.2</span> Poder de um teste</h2>
+<p>Chamamos de <em>poder de um teste</em> a probabilidade de rejeitar <span class="math inline">\(H_0\)</span> dado que ela é falsa, isto é,</p>
+<p><span class="math display">\[
+P\left(T(X_1, ..., X_n) \in RC \hspace{2mm} | \hspace{2mm} H_0 \text{ é falsa}\right) = 1 - \beta,
+\]</span></p>
+<p>em que <span class="math inline">\(T\)</span> é a estatística do teste e <span class="math inline">\(\beta\)</span> é o erro do tipo II.</p>
 
-</div>
-<div id="condicionalidade" class="section level2">
-<h2><span class="header-section-number">5.6</span> Condicionalidade</h2>
-<p><strong>Definição</strong>. Para dois eventos quaisquer <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, sendo <span class="math inline">\(P(B) &gt; 0\)</span>, definimos a <em>probabilidade condicional</em> de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(P(A|B)\)</span>, como sendo</p>
-<p><span class="math display">\[
-P(A|B) = \frac{P(A\cap B)}{P(B)}.
-\]</span></p>
-</div>
-<div id="independencia" class="section level2">
-<h2><span class="header-section-number">5.7</span> Independência</h2>
-<p>Da definição de probabilidade condicional, temos que</p>
-<p><span class="math display">\[
-P(A \cap B) = P(A|B)P(B).
-\]</span></p>
-<p>Se a ocorrência de um evento <span class="math inline">\(B\)</span> não trouxer nenhuma informação sobre a ocorrência ou não de um evento <span class="math inline">\(A\)</span>, dizemos que <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são independentes.</p>
-<p>Formalmente, dizemos que dois eventos quaisquer são independentes se</p>
-<p><span class="math display">\[
-P(A \cap B) = P(A)P(B).
-\]</span></p>
-</div>
-<div id="teorema-de-bayes" class="section level2">
-<h2><span class="header-section-number">5.8</span> Teorema de Bayes</h2>
-<p>O Teorema de Bayes é dado pela seguinte expressão:</p>
-<p><span class="math display">\[
-P(A|B) = \frac{P(B|A)P(A)}{P(B)}.
-\]</span></p>
-<div id="resultado" class="section level3">
-<h3><span class="header-section-number">5.8.1</span> Resultado</h3>
-<p>Seja <span class="math inline">\(A\)</span> um evento de <span class="math inline">\(\Omega\)</span> e <span class="math inline">\(C_1, ..., C_n\)</span> uma partição desse espaço amostral. Então</p>
-<p><span class="math display">\[
-P(A) = \sum_{i=1}^{n} P(A|C_i)P(C_i)
-\]</span></p>
-<p>Pelo resultado, podemos escrever o Teorema de Bayes como</p>
-<p><span class="math display">\[
-P(C_i|A) = \frac{P(A|C_i)P(C_i)}{\sum_{i=1}^{n} P(A|C_i)P(C_i)}.
-\]</span></p>
-</div>
-<div id="exemplo" class="section level3">
-<h3><span class="header-section-number">5.8.2</span> Exemplo</h3>
-<p>Em uma fábrica de parafusos, as máquinas <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span> produzem 25%, 35% e 40% do total, respectivamente. Da produção de cada máquina 5%, 4% e 2%, respectivamente, são parafusos defeituosos. Escolhe-se ao acaso um parafuso e verifica-se que é defeituoso. Qual a probabilidade de que o parafuso venha da máquina <span class="math inline">\(A\)</span>?</p>
-<p>Vamos definir os seguintes eventos:</p>
-<p><span class="math inline">\(A\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(A\)</span></p>
-<p><span class="math inline">\(B\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(B\)</span></p>
-<p><span class="math inline">\(C\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(C\)</span></p>
-<p><span class="math inline">\(D\)</span>: o parafuso é defeituoso</p>
-<p>Pelo enunciado, sabemos que: <span class="math inline">\(P(A) = 0.25\)</span>, <span class="math inline">\(P(B) = 0.35\)</span>, <span class="math inline">\(P(C) = 0.40\)</span>, <span class="math inline">\(P(D|A) = 0.05\)</span>, <span class="math inline">\(P(D|B) = 0.04\)</span> e <span class="math inline">\(P(D|C) = 0.02\)</span>. Dessa forma,</p>
-<p><span class="math display">\[
-P(A|D) = \frac{P(D|A)P(A)}{P(D)} = \frac{P(D|A)P(A)}{P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)} = 
-\]</span> <span class="math display">\[
-= \frac{0.05\cdot 0.25}{0.05\cdot0.25 + 0.04\cdot0.35 + 0.02\cdot0.40} = 0.3623 = 36,23\%.
-\]</span></p>
+<div id="refs" class="references">
 
 </div>
 </div>
@@ -279,8 +271,8 @@ P(A|D) = \frac{P(D|A)P(A)}{P(D)} = \frac{P(D|A)P(A)}{P(D|A)P(A) + P(D|B)P(B) + P
           </div>
         </div>
       </div>
-<a href="graficos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="variaveis-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intervalos-de-confianca.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

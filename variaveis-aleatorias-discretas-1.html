@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="graficos.html">
-<link rel="next" href="variaveis-aleatorias.html">
+<link rel="prev" href="variaveis-aleatorias.html">
+<link rel="next" href="variaveis-aleatorias-continuas-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -184,94 +184,42 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probabilidade" class="section level1">
-<h1><span class="header-section-number">Capítulo 5</span> Probabilidade</h1>
-<p>A interpretação da probabilidade pode variar de pessoa para pessoa. Para alguns, a probabilidade é vista como o limite de uma sequência de frequências relativas. Essa é a visão frequentista da probabilidade. Para outros, a probabilidade é uma medida subjetiva de incerteza. Essa é a visão Bayesiana.</p>
-<div id="espaco-amostral" class="section level2">
-<h2><span class="header-section-number">5.1</span> Espaço amostral</h2>
-<p><strong>Definição</strong>. O espaço amostral, comumente denotado por <span class="math inline">\(\Omega\)</span>, é o conjunto de todos os possíveis resultados de um <em>experimento aleatório</em>.</p>
-<p>Chamamos de <strong>evento</strong> qualquer subconjunto de interesse do espaço amostral.</p>
-<p><strong>Definição</strong>. Chamamos de evento complementar do evento <span class="math inline">\(A\)</span>, simbolicamente <span class="math inline">\(A^c\)</span>, o conjunto formado por todos os elementos que não pertencem a <span class="math inline">\(A\)</span>.</p>
-</div>
-<div id="uniao-e-interseccao-de-eventos" class="section level2">
-<h2><span class="header-section-number">5.2</span> União e intersecção de eventos</h2>
-<p><strong>Definição</strong>. Chamamos de <em>união</em> dos eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, simbolicamente <span class="math inline">\(A \cup B\)</span>, o conjunto formado pelos elementos que pertencem ao evento <span class="math inline">\(A\)</span> ou ao evento <span class="math inline">\(B\)</span>.</p>
-<p><strong>Definição</strong>. Chamamos de intersecção dos eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, simbolicamente, <span class="math inline">\(A \cap B\)</span>, o conjunto formado pelos pontos que pertencem ao evento <span class="math inline">\(A\)</span> e ao evento <span class="math inline">\(B\)</span>.</p>
-</div>
-<div id="particao-de-um-espaco-amostral" class="section level2">
-<h2><span class="header-section-number">5.3</span> Partição de um espaço amostral</h2>
-<p><strong>Definição</strong>. Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> uma coleção de eventos tais que <span class="math inline">\(A_1 \cup ...\cup A_n = \Omega\)</span> e <span class="math inline">\(A_1 \cap A_n = \varnothing\)</span>, <span class="math inline">\(\forall i \neq j\)</span>. Chamamos essa coleção de <strong>partição do espaço amostral</strong>.</p>
-</div>
-<div id="algumas-propriedades" class="section level2">
-<h2><span class="header-section-number">5.4</span> Algumas propriedades</h2>
-<p>Seja <span class="math inline">\(A\)</span> um sub-conjunto de <span class="math inline">\(\Omega\)</span>.</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(0 \leq P(A) \leq 1\)</span></li>
-<li><span class="math inline">\(P(\Omega) = 1\)</span> e <span class="math inline">\(P(\varnothing) = 0\)</span></li>
-<li><span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span></li>
-</ol>
-</div>
-<div id="chance" class="section level2">
-<h2><span class="header-section-number">5.5</span> Chance</h2>
-<p>A chance do evento <span class="math inline">\(A\)</span> é definida pela razão entre as probabilidades de ocorrência e não-ocorrência do evento, isto é,</p>
+<div id="variaveis-aleatorias-discretas-1" class="section level1">
+<h1><span class="header-section-number">Capítulo 7</span> Variáveis aleatórias discretas</h1>
+<p></p>
+<div id="distribuicao-uniforme" class="section level2">
+<h2><span class="header-section-number">7.1</span> Distribuição Uniforme</h2>
+<p>A variável aleatória <span class="math inline">\(X\)</span>, assumindo os valores <span class="math inline">\(x_1, ..., x_n\)</span>, tem distribuição uniforme se</p>
 <p><span class="math display">\[
-\text{Chance de A} = \frac{P(A)}{P(A^c)} = \frac{P(\text{A ocorrer})}{P(\text{A não ocorrer})}.
+p(x_i) = P(X = x_i) = \frac{1}{n}, \forall 1, ..., n.
 \]</span></p>
-<p>Observe que a chance de um evento pode variar de 0 a <span class="math inline">\(+ \infty\)</span>.</p>
+</div>
+<div id="distribuicao-bernoulli" class="section level2">
+<h2><span class="header-section-number">7.2</span> Distribuição Bernoulli</h2>
+<p>A variável aleatória <span class="math inline">\(X\)</span>, que assume apenas os valores 0 ou 1, com função de probabilidade dada por <span class="math inline">\(p(x) = p\)</span>, se <span class="math inline">\(x = 1\)</span>, e <span class="math inline">\(p(x) = 1 - p\)</span>, se <span class="math inline">\(x = 0\)</span>, é chamada v. a. de Bernoulli. Aqui, consideramos <span class="math inline">\(0 &lt; p &lt; 1\)</span>.</p>
+<p>Temos que <span class="math inline">\(E(X) = p\)</span> e <span class="math inline">\(VAR(X) = p(1 - p)\)</span>.</p>
+</div>
+<div id="distribuicao-binomial" class="section level2">
+<h2><span class="header-section-number">7.3</span> Distribuição Binomial</h2>
+<p>Sejam <span class="math inline">\(X_1, ..., X_n\)</span> <span class="math inline">\(n\)</span> variáveis aleatórias independentes com distribuição <span class="math inline">\(Bernoulli(p)\)</span>. A variável aleatória <span class="math inline">\(Y\)</span> definida por</p>
+<p><span class="math display">\[
+Y = \sum_{i=1}^{n} X_i
+\]</span></p>
+<p>tem distribuição Binomial. Simbolicamente, escrevemos <span class="math inline">\(Y \sim Binomial(n, p)\)</span>.</p>
+<p>A função de probabilidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+p(x) = P(X = x) = \binom{n}{p} p^x (1-p)^{n-x}.
+\]</span></p>
+<p>Temos que <span class="math inline">\(E(X) = np\)</span> e <span class="math inline">\(VAR(X) = np(1 - p)\)</span>.</p>
+</div>
+<div id="distribuicao-de-poisson" class="section level2">
+<h2><span class="header-section-number">7.4</span> Distribuição de Poisson</h2>
+<p>Dizemos que a v. a. <span class="math inline">\(X\)</span> tem distribuição Poisson com parâmetro <span class="math inline">\(\lambda &gt; 0\)</span> se</p>
+<p><span class="math display">\[
+P(X = x) = \frac{\exp(- \lambda)\lambda^x}{x!}, \quad x = 0, 1, 2, ...
+\]</span></p>
+<p>Temos que <span class="math inline">\(E(X) = VAR(X) = \lambda\)</span>.</p>
 
-</div>
-<div id="condicionalidade" class="section level2">
-<h2><span class="header-section-number">5.6</span> Condicionalidade</h2>
-<p><strong>Definição</strong>. Para dois eventos quaisquer <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, sendo <span class="math inline">\(P(B) &gt; 0\)</span>, definimos a <em>probabilidade condicional</em> de <span class="math inline">\(A\)</span> dado <span class="math inline">\(B\)</span>, denotada por <span class="math inline">\(P(A|B)\)</span>, como sendo</p>
-<p><span class="math display">\[
-P(A|B) = \frac{P(A\cap B)}{P(B)}.
-\]</span></p>
-</div>
-<div id="independencia" class="section level2">
-<h2><span class="header-section-number">5.7</span> Independência</h2>
-<p>Da definição de probabilidade condicional, temos que</p>
-<p><span class="math display">\[
-P(A \cap B) = P(A|B)P(B).
-\]</span></p>
-<p>Se a ocorrência de um evento <span class="math inline">\(B\)</span> não trouxer nenhuma informação sobre a ocorrência ou não de um evento <span class="math inline">\(A\)</span>, dizemos que <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são independentes.</p>
-<p>Formalmente, dizemos que dois eventos quaisquer são independentes se</p>
-<p><span class="math display">\[
-P(A \cap B) = P(A)P(B).
-\]</span></p>
-</div>
-<div id="teorema-de-bayes" class="section level2">
-<h2><span class="header-section-number">5.8</span> Teorema de Bayes</h2>
-<p>O Teorema de Bayes é dado pela seguinte expressão:</p>
-<p><span class="math display">\[
-P(A|B) = \frac{P(B|A)P(A)}{P(B)}.
-\]</span></p>
-<div id="resultado" class="section level3">
-<h3><span class="header-section-number">5.8.1</span> Resultado</h3>
-<p>Seja <span class="math inline">\(A\)</span> um evento de <span class="math inline">\(\Omega\)</span> e <span class="math inline">\(C_1, ..., C_n\)</span> uma partição desse espaço amostral. Então</p>
-<p><span class="math display">\[
-P(A) = \sum_{i=1}^{n} P(A|C_i)P(C_i)
-\]</span></p>
-<p>Pelo resultado, podemos escrever o Teorema de Bayes como</p>
-<p><span class="math display">\[
-P(C_i|A) = \frac{P(A|C_i)P(C_i)}{\sum_{i=1}^{n} P(A|C_i)P(C_i)}.
-\]</span></p>
-</div>
-<div id="exemplo" class="section level3">
-<h3><span class="header-section-number">5.8.2</span> Exemplo</h3>
-<p>Em uma fábrica de parafusos, as máquinas <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span> produzem 25%, 35% e 40% do total, respectivamente. Da produção de cada máquina 5%, 4% e 2%, respectivamente, são parafusos defeituosos. Escolhe-se ao acaso um parafuso e verifica-se que é defeituoso. Qual a probabilidade de que o parafuso venha da máquina <span class="math inline">\(A\)</span>?</p>
-<p>Vamos definir os seguintes eventos:</p>
-<p><span class="math inline">\(A\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(A\)</span></p>
-<p><span class="math inline">\(B\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(B\)</span></p>
-<p><span class="math inline">\(C\)</span>: o parafuso foi produzido pela máquina <span class="math inline">\(C\)</span></p>
-<p><span class="math inline">\(D\)</span>: o parafuso é defeituoso</p>
-<p>Pelo enunciado, sabemos que: <span class="math inline">\(P(A) = 0.25\)</span>, <span class="math inline">\(P(B) = 0.35\)</span>, <span class="math inline">\(P(C) = 0.40\)</span>, <span class="math inline">\(P(D|A) = 0.05\)</span>, <span class="math inline">\(P(D|B) = 0.04\)</span> e <span class="math inline">\(P(D|C) = 0.02\)</span>. Dessa forma,</p>
-<p><span class="math display">\[
-P(A|D) = \frac{P(D|A)P(A)}{P(D)} = \frac{P(D|A)P(A)}{P(D|A)P(A) + P(D|B)P(B) + P(D|C)P(C)} = 
-\]</span> <span class="math display">\[
-= \frac{0.05\cdot 0.25}{0.05\cdot0.25 + 0.04\cdot0.35 + 0.02\cdot0.40} = 0.3623 = 36,23\%.
-\]</span></p>
-
-</div>
 </div>
 </div>
             </section>
@@ -279,8 +227,8 @@ P(A|D) = \frac{P(D|A)P(A)}{P(D)} = \frac{P(D|A)P(A)}{P(D|A)P(A) + P(D|B)P(B) + P
           </div>
         </div>
       </div>
-<a href="graficos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="variaveis-aleatorias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variaveis-aleatorias.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variaveis-aleatorias-continuas-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
