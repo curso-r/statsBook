@@ -9,3 +9,7 @@ bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 ---
+
+# Preâmbulo
+
+Essa é a apostila dos cursos de Estatística I e Estatística II da Curso-R.
