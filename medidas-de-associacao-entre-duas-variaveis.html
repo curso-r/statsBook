@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="analise-descritiva.html">
+<link rel="prev" href="quantis.html">
+<link rel="next" href="probabilidade.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -180,62 +180,138 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Apostilas dos cursos de Estatística I e Estatística II</h1>
-<h4 class="author"><em>Curso-R</em></h4>
-<h4 class="date"><em>2017-02-24</em></h4>
+<div id="medidas-de-associacao-entre-duas-variaveis" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Medidas de associação entre duas variáveis</h1>
+<div id="associacao-entre-variaveis-qualitativas" class="section level2">
+<h2><span class="header-section-number">6.1</span> Associação entre variáveis qualitativas</h2>
+<p>Para investigar a associação entre duas variáveis qualitativas, podemos utilizar <strong>tabelas de contingência</strong>.</p>
+<div id="exemplo-4" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Exemplo</h3>
+<p>Vamos considerar as seguintes variáveis</p>
+<p>X: salas do terceiro ano do ensino médio</p>
+<p>Y: conceitos finais na disciplina de matemática</p>
+<table style="width:83%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Variáveis</th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A</td>
+<td align="center">20 (69%)</td>
+<td align="center">16 (49%)</td>
+<td align="center">10 (37%)</td>
+<td align="center">46 (51%)</td>
+</tr>
+<tr class="even">
+<td align="center">B</td>
+<td align="center">6 (21%)</td>
+<td align="center">6 (18%)</td>
+<td align="center">1 (4%)</td>
+<td align="center">13 (15%)</td>
+</tr>
+<tr class="odd">
+<td align="center">C</td>
+<td align="center">2 (7%)</td>
+<td align="center">1 (3%)</td>
+<td align="center">10 (37%)</td>
+<td align="center">13 (15%)</td>
+</tr>
+<tr class="even">
+<td align="center">D</td>
+<td align="center">1 (3%)</td>
+<td align="center">10 (30%)</td>
+<td align="center">6 (22%)</td>
+<td align="center">17 (19%)</td>
+</tr>
+<tr class="odd">
+<td align="center">Total</td>
+<td align="center">29 (100%)</td>
+<td align="center">33 (100%)</td>
+<td align="center">27 (100%)</td>
+<td align="center">89 (100%)</td>
+</tr>
+</tbody>
+</table>
+<p>Analisando a tabela acima, verificamos que a proporção de alunos com boas notas é maior nas classes I e II. De uma forma mais geral, dizemos que as duas variáveis estão associadas.</p>
 </div>
-<div id="preambulo" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Preâmbulo</h1>
-<p>Essa é a apostila dos cursos de Estatística I e Estatística II da Curso-R.</p>
+</div>
+<div id="associacao-entre-variaveis-quantitativas" class="section level2">
+<h2><span class="header-section-number">6.2</span> Associação entre variáveis quantitativas</h2>
+<p>Vamos definir uma medida para quantificar a associação entre duas variáveis quantitativas. Vale lembrar que existem vários tipos de associação. Aqui, vamos considerar o tipo mais simples: <em>a relação linear</em>.</p>
+<p>Vamos considerar um conjunto de observações bivariadas <span class="math inline">\((x_1, y_1), ..., (x_n, y_n)\)</span>.</p>
+<p>O <em>coeficiente de relação linear</em> é dado por</p>
+<p><span class="math display">\[
+Corr(X, Y) = \frac{1}{n} \sum_{i=1}^{n} \left( \frac{(x_i - \bar{x})}{DP(X)}  \right) \left( \frac{(y_i - \bar{y})}{DP(Y)}  \right).
+\]</span></p>
 
-<div id="base-matemativa" class="section level2">
-<h2><span class="header-section-number">1.1</span> Base matemátiva</h2>
-<div id="o-que-sao-variaveis" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> O que são variáveis?</h3>
-<p>Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z…). Exemplos:</p>
-<ul>
-<li>Velocidade marcada no velocímetro de um carro.</li>
-<li>Cor de uma bola retirada de uma urna.</li>
-<li>Número de gols sofridos pelo São Paulo no próximo jogo.</li>
-</ul>
-<p>Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de <em>variável aleatória</em>.</p>
 </div>
-<div id="conjuntos" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Conjuntos</h3>
-<p>Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C …) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:</p>
+<div id="introducao" class="section level2">
+<h2><span class="header-section-number">6.3</span> Introdução</h2>
 <ul>
-<li>{A, B, C}</li>
-<li>{1, 3, 5}</li>
-<li>{x: x é par}</li>
-</ul>
-<p>Conjuntos importantes para o curso:</p>
-<ul>
-<li><span class="math inline">\(\mathbb{N} = \{0, 1, 2, ...\}\)</span> — conjunto dos números naturais</li>
-<li><span class="math inline">\(\mathbb{R} = (-\infty, +\infty)\)</span> — conjunto dos números reais</li>
+<li>Analisar um gráfico é uma maneira rápida e concisa de visualizar certas informações contidas em um conjunto de observações.</li>
+<li>O gráfico certo a ser utilizado em cada situação depende da informação que queremos visualizar e do tipo de variável que estamos trabalhando.</li>
+<li>Um gráfico mal muitas vezes falha em trazer com clareza a informação que queremos visualizar e, em alguns casos, pode levar a falsas evidências.</li>
 </ul>
 </div>
-<div id="somatorios-e-produtorios" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Somatórios e produtórios</h3>
-<p>Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:</p>
-<p><span class="math inline">\(\sum_{i=1}^{n} i = 1 + 2 + ... + n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\sum_{i=1}^{10}x = 1 + 2 + ... + 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\sum_{i=1}^{10} X = X_1 + X_2 + X_3 + ... + X_{10}\)</span>.</p>
-<p>De forma análoga, temos a seguinte notação para produtórios:</p>
-<p><span class="math inline">\(\prod_{i=1}^{n} i = 1 \times 2 \times ... \times n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\prod_{i=1}^{10}x = 1 \times 2 \times ... \times 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}\)</span>.</p>
+<div id="graficos-de-barras" class="section level2">
+<h2><span class="header-section-number">6.4</span> Gráficos de barras</h2>
+<p>Amostra: estudantes de estatística</p>
+<p>X: cor do cabelo — Y: cor dos olhos — W: sexo</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Podemos associar a variável “cor dos olhos” à cor das barras do gráfico.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Além disso, podemos dividir o gráfico pela variável “sexo” e comparar as frequências para homens e mulheres.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
-<div id="vetores" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Vetores</h3>
-<p>Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas.</p>
-<p>Notação: <span class="math inline">\(X = (X_1, X_2, ..., X_n)\)</span>.</p>
+<div id="histogramas" class="section level2">
+<h2><span class="header-section-number">6.5</span> Histogramas</h2>
+<p>Amostra de tamanho 400 de uma distribuição normal com média 170 e desvio padrão 8.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Em vez de representar a frequência no eixo y, podemos optar pela densidade, definida pela razão entre a proporção e a amplitude de cada classe. Um histograma construído dessa forma tem área 1.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Assimetria à direita</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Assimetria à esquerda</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="boxplots" class="section level2">
+<h2><span class="header-section-number">6.6</span> Boxplots</h2>
+<p>Dados da temporada de Baseball de 1986 (EUA)</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Dados da temporada de Baseball de 1986 (EUA)</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="graficos-de-dispersao" class="section level2">
+<h2><span class="header-section-number">6.7</span> Gráficos de dispersão</h2>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-uma-serie" class="section level2">
+<h2><span class="header-section-number">6.8</span> Gráfico de uma série</h2>
+<p>Vazão do rio Nilo de 1871 a 1970.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Número de mortes acidentais nos EUA de 1973 a 1979.</p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="graficos-mal-construidos" class="section level2">
+<h2><span class="header-section-number">6.9</span> Gráficos mal construídos</h2>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="statsBook_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 
-</div>
 </div>
 </div>
             </section>
@@ -243,8 +319,8 @@
           </div>
         </div>
       </div>
-
-<a href="analise-descritiva.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="quantis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probabilidade.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

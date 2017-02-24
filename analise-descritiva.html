@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="analise-descritiva.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="medidas-de-posicao-central.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -180,60 +180,135 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Apostilas dos cursos de Estatística I e Estatística II</h1>
-<h4 class="author"><em>Curso-R</em></h4>
-<h4 class="date"><em>2017-02-24</em></h4>
-</div>
-<div id="preambulo" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Preâmbulo</h1>
-<p>Essa é a apostila dos cursos de Estatística I e Estatística II da Curso-R.</p>
-
-<div id="base-matemativa" class="section level2">
-<h2><span class="header-section-number">1.1</span> Base matemátiva</h2>
-<div id="o-que-sao-variaveis" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> O que são variáveis?</h3>
-<p>Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z…). Exemplos:</p>
+<div id="analise-descritiva" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Análise descritiva</h1>
+<p>Os principais objetivos da análise descritiva são:</p>
 <ul>
-<li>Velocidade marcada no velocímetro de um carro.</li>
-<li>Cor de uma bola retirada de uma urna.</li>
-<li>Número de gols sofridos pelo São Paulo no próximo jogo.</li>
+<li>analisar o comportamento das variáveis em estudo; e</li>
+<li>buscar indícios de associação entre as variáveis.</li>
 </ul>
-<p>Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de <em>variável aleatória</em>.</p>
-</div>
-<div id="conjuntos" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Conjuntos</h3>
-<p>Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C …) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:</p>
+<div id="tipos-de-variaveis" class="section level2">
+<h2><span class="header-section-number">2.1</span> Tipos de variáveis</h2>
+<p>Uma etapa primordial de qualquer análise estatística é verificar qual metodologia é mais adequada para o conjunto de dados sob análise. Para isso, é essencial conhecermos a natureza das variáveis presentes no estudo.</p>
+<div id="motivacao" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Motivação</h3>
+<p>Uma médica do Instituto do Coração está interessada em associar certas características dos seus pacientes com a ocorrência de extrassístoles (batimentos cardíacos fora do ritmo). Com esse objetivo em mente, com cada paciente, ela realizou uma entrevista e uma série de exames. Destacamos a seguir algumas das variáveis coletadas</p>
 <ul>
-<li>{A, B, C}</li>
-<li>{1, 3, 5}</li>
-<li>{x: x é par}</li>
+<li>Idade (anos)</li>
+<li>Sexo (M, F)</li>
+<li>Tabagismo (fuma ou não fuma)</li>
+<li>Consumo de álcool (ml por semana)</li>
+<li>Fração de ejeção (%)</li>
+<li>Frequência cardíaca (bpm)</li>
+<li>Presença de extrassístoles (sim ou não)</li>
 </ul>
-<p>Conjuntos importantes para o curso:</p>
-<ul>
-<li><span class="math inline">\(\mathbb{N} = \{0, 1, 2, ...\}\)</span> — conjunto dos números naturais</li>
-<li><span class="math inline">\(\mathbb{R} = (-\infty, +\infty)\)</span> — conjunto dos números reais</li>
-</ul>
+<p>Observe que algumas variáveis apresentam, como possíveis realizações, uma qualidade (atributo) do paciente, enquanto outras apresentam, como possíveis realizações, valores resultantes de uma contagem ou mensuração. As variáveis do primeiro tipo são chamadas <em>qualitativas</em> e, as do segundo, <em>quantitativas</em>.</p>
 </div>
-<div id="somatorios-e-produtorios" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Somatórios e produtórios</h3>
-<p>Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:</p>
-<p><span class="math inline">\(\sum_{i=1}^{n} i = 1 + 2 + ... + n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\sum_{i=1}^{10}x = 1 + 2 + ... + 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\sum_{i=1}^{10} X = X_1 + X_2 + X_3 + ... + X_{10}\)</span>.</p>
-<p>De forma análoga, temos a seguinte notação para produtórios:</p>
-<p><span class="math inline">\(\prod_{i=1}^{n} i = 1 \times 2 \times ... \times n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\prod_{i=1}^{10}x = 1 \times 2 \times ... \times 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}\)</span>.</p>
+<div id="definicao" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Definição</h3>
+<p><strong>Variáveis qualitativas</strong> apresentam como possíveis realizações uma qualidade ou atributo. Se os possíveis resultados não tiverem nenhum tipo de ordenação, chamamos a variável de <strong>qualitativa nominal</strong>. Já as variáveis qualitativas cujos resultados podem ser ordenados são chamadas de <strong>qualitativas ordinais</strong>.</p>
+<p><strong>Variáveis quantitativas</strong> apresentam como possíveis realizações valores (números) resultantes de uma contagem ou mensuração. Se o conjunto de possíveis valores dessa variável é finito ou enumerável, a variável é chamada de <strong>quantitativa discreta</strong>. Se esse conjunto é não-enumerável (um subconjunto dos números reais), a variável é chamada de <strong>quantitativa contínua</strong>.</p>
+<p><strong>Observação</strong>: na prática, para o ajuste de modelos estatísticos, as variáveis qualitativas são transformadas em variáveis quantitativas discretas. Por exemplo, se considerarmos a variável sexo, as categorias “feminino” e “masculino” são transformadas em “0” e “1”.</p>
 </div>
-<div id="vetores" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Vetores</h3>
-<p>Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas.</p>
-<p>Notação: <span class="math inline">\(X = (X_1, X_2, ..., X_n)\)</span>.</p>
+</div>
+<div id="distribuicao-de-frequencia" class="section level2">
+<h2><span class="header-section-number">2.2</span> Distribuição de frequência</h2>
+<p>Com o objetivo de analisar o comportamento das variáveis em estudo, uma ideia inicial é estudar como os valores de cada variável estão distribuídos. Uma maneira simples de se fazer isto é construir uma <em>tabela de frequências</em>.</p>
+<div id="exemplo-1" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Exemplo 1</h3>
+<p>Vamos considerar as seguintes tabelas de frequência para a variável qualitativa</p>
+<p>X: diretor preferido entre as opções {Tarantino, Scorsese, Nolan, Fincher}.</p>
+<table style="width:90%;">
+<colgroup>
+<col width="16%" />
+<col width="26%" />
+<col width="25%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Diretor</th>
+<th align="center">Frequência <span class="math inline">\((n_i)\)</span></th>
+<th align="center">Proporção <span class="math inline">\((f_i)\)</span></th>
+<th align="center">Proporção (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Tarantino</td>
+<td align="center">33</td>
+<td align="center">0,33</td>
+<td align="center">33%</td>
+</tr>
+<tr class="even">
+<td align="center">Scorsese</td>
+<td align="center">22</td>
+<td align="center">0,22</td>
+<td align="center">22%</td>
+</tr>
+<tr class="odd">
+<td align="center">Nolan</td>
+<td align="center">35</td>
+<td align="center">0,35</td>
+<td align="center">35%</td>
+</tr>
+<tr class="even">
+<td align="center">Fincher</td>
+<td align="center">10</td>
+<td align="center">0,1</td>
+<td align="center">10%</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Total</strong></td>
+<td align="center"><strong>100</strong></td>
+<td align="center"><strong>1</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>frequência absoluta</strong> <span class="math inline">\((n_i)\)</span> representa quantas observações há em cada categoria da variável.</p>
+<p>A <strong>proporção</strong> ou <strong>frequência relativa</strong> é a razão entre a frequência absoluta e o total de observações <span class="math inline">\((n)\)</span>. Esta medida é acrescentada à tabela para facilitar a comparação da frequência entre as categorias da variável e possibilita comparar tabelas de frequências (para uma mesma variável) com totais <span class="math inline">\((n)\)</span> diferentes.</p>
+<p>Também podemos construir tabelas de frequências para variáveis quantitativas. Em geral, é necessário dividir o intervalo de possíveis valores dessa variável em classes.</p>
+</div>
+<div id="exemplo-2" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Exemplo 2</h3>
+<p>Vamos considerar a variável <em>fração de ejeção</em> do banco de dados do Instuto do Coração. Lembrando que essa variável pode variar entre 0 e 100%, vamos dividir esse intervalo em duas classes: [0, 55) e [55, 100].</p>
+<table style="width:99%;">
+<colgroup>
+<col width="19%" />
+<col width="29%" />
+<col width="27%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Classes</th>
+<th align="center">Frequência <span class="math inline">\((n_i)\)</span></th>
+<th align="center">Proporção <span class="math inline">\((n_i)\)</span></th>
+<th align="center">Proporção (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">[0,55)</td>
+<td align="center">237</td>
+<td align="center">0,798</td>
+<td align="center">79,8%</td>
+</tr>
+<tr class="even">
+<td align="center">[55,100]</td>
+<td align="center">60</td>
+<td align="center">0,202</td>
+<td align="center">20,2%</td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Total</strong></td>
+<td align="center"><strong>297</strong></td>
+<td align="center"><strong>1</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -243,8 +318,8 @@
           </div>
         </div>
       </div>
-
-<a href="analise-descritiva.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas-de-posicao-central.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

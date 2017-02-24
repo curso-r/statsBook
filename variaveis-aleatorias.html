@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="analise-descritiva.html">
+<link rel="prev" href="probabilidade.html">
+<link rel="next" href="estimacao-pontual.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -180,62 +180,176 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Apostilas dos cursos de Estatística I e Estatística II</h1>
-<h4 class="author"><em>Curso-R</em></h4>
-<h4 class="date"><em>2017-02-24</em></h4>
+<div id="variaveis-aleatorias" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Variáveis aleatórias</h1>
+<p>Uma variável aleatória (v.a.) é uma função <span class="math inline">\(X\)</span> definida no espaço amostral <span class="math inline">\(\Omega\)</span> e com valores num conjunto de pontos de <span class="math inline">\(\mathbf{R}\)</span>. Se esse conjunto de pontos é enumerável, a variável <span class="math inline">\(X\)</span> é discreta. Se o conjunto é não-enumerável, <span class="math inline">\(X\)</span> é contínua.</p>
+<div id="variaveis-aleatorias-discretas" class="section level2">
+<h2><span class="header-section-number">8.1</span> Variáveis aleatórias discretas</h2>
+<div id="funcao-de-probabilidade" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Função de probabilidade</h3>
+<p><strong>Definição</strong>. À função que, para cada valor possível da variável aleatória discreta <span class="math inline">\(X\)</span>, associa a sua probabilidade de ocorrência, damos o nome de função de probabilidade de <span class="math inline">\(X\)</span>.</p>
 </div>
-<div id="preambulo" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Preâmbulo</h1>
-<p>Essa é a apostila dos cursos de Estatística I e Estatística II da Curso-R.</p>
+<div id="esperanca-de-uma-variavel-aleatoria-discreta" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Esperança de uma variável aleatória discreta</h3>
+<p><strong>Definição</strong>. Dada a v. a. discreta <span class="math inline">\(X\)</span>, assumindo os valores <span class="math inline">\(x_1, ..., x_n\)</span>, chamamos de <em>esparança</em> de <span class="math inline">\(X\)</span> o valor</p>
+<p><span class="math display">\[
+E(X) = \sum_{i}^{n}x_i p(x_i) = \sum_{i}^{n}x_i P(X = x_i).
+\]</span></p>
+</div>
+<div id="variancia-de-uma-variavel-aleatoria-discreta" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Variância de uma variável aleatória discreta</h3>
+<p><strong>Definição</strong>. Chamamos de variância da v. a. <span class="math inline">\(X\)</span> o valor</p>
+<p><span class="math display">\[
+VAR(X) = \sum_{i}^{n}(x_i - E(X))^2 p(x_i) = E((X - E(X))^2).
+\]</span></p>
+<p>Observe que, abrindo a expressão acima, podemos escrever</p>
+<p><span class="math display">\[
+VAR(X) = E(X^2) - (E(X))^2.
+\]</span></p>
+<p>O desvio padrão de <span class="math inline">\(X\)</span> é dado pela raiz quadrada positiva da variância.</p>
+</div>
+<div id="funcao-de-distribuicao-acumulada" class="section level3">
+<h3><span class="header-section-number">8.1.4</span> Função de distribuição acumulada</h3>
+<p><strong>Definição</strong>. Dada a variável aleatória <span class="math inline">\(X\)</span>, chamaremos de função de distribuição acumulada, ou simplesmente função de distribuição, a função</p>
+<p><span class="math display">\[
+F(x) = P(X \leq x).
+\]</span></p>
+</div>
+</div>
+<div id="variaveis-aleatorias-continuas" class="section level2">
+<h2><span class="header-section-number">8.2</span> Variáveis aleatórias contínuas</h2>
+<p>Para variáveis aleatórias contínuas não podemos definir uma função de probabilidade, pois</p>
+<p><span class="math display">\[
+P(X = x) = 0,
+\]</span> para qualquer possível valor <span class="math inline">\(x\)</span> de qualquer v. a. contínua <span class="math inline">\(X\)</span>.</p>
+<p>Alternativamente, definiremos a chamada <em>função densidade de probabilidade</em>.</p>
+<div id="funcao-densidade-de-probabilidade" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Função densidade de probabilidade</h3>
+<p>A probabilidade de uma v. a. contínua <span class="math inline">\(X\)</span> com função densidade de probabilidade <span class="math inline">\(f(x)\)</span> pertencer a um intervalo <span class="math inline">\([a,b]\)</span>, denotada por <span class="math inline">\(P(a \leq X \leq b)\)</span>, é dada pela área abaixo da curva de <span class="math inline">\(f(x)\)</span> no intervalo <span class="math inline">\([a,b]\)</span>.</p>
+<p>Dada uma v. a. contínua <span class="math inline">\(X\)</span>, também podemos definir as quantidades <span class="math inline">\(E(X)\)</span> e <span class="math inline">\(VAR(X)\)</span>. Não vamos, no entanto, entrar em detalhes sobre como obtê-las.</p>
+<p>Vale lembrar que a definição dada para a função de distribuição acumulada também vale para v. a. contínuas.</p>
+</div>
+</div>
+<div id="associacao-entre-variaveis-aleatorias" class="section level2">
+<h2><span class="header-section-number">8.3</span> Associação entre variáveis aleatórias</h2>
+<p><strong>Definição</strong>. Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> duas v. a. discretas quaisquer. Chamamos de função de probabilidade conjunta a função dada por</p>
+<p><span class="math display">\[
+p(x, y) = P(X = x, Y = y).
+\]</span></p>
+<p>Analogamente, podemos pensar na função de densidade conjunta no caso contínuo, denotada por <span class="math inline">\(f(x,y)\)</span>.</p>
+<p><strong>Definição</strong>. Dizemos que as variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes se, e somente se,</p>
+<p><span class="math display">\[
+p(x, y) = P(X = x, Y = y) = P(X = x)P(Y = y), \forall x, y.
+\]</span></p>
+<p>e, analogamente, no caso contínuo, se</p>
+<p><span class="math display">\[
+f(x, y) = f(x)f(y), \quad  \forall x, y.
+\]</span></p>
+<p><strong>Definição</strong>. Sejam <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> v. a. discretas. A distribuição condicional de <span class="math inline">\(X|Y=y\)</span> é dada por</p>
+<p><span class="math display">\[
+P(X = x | Y = y) = \frac{P(X = x, Y = y)}{P(Y = y)}
+\]</span></p>
+<p>Analogamente, no caso contínuo, temos</p>
+<p><span class="math display">\[
+f(x|y) = \frac{f(x, y)}{f(y)}.
+\]</span></p>
 
-<div id="base-matemativa" class="section level2">
-<h2><span class="header-section-number">1.1</span> Base matemátiva</h2>
-<div id="o-que-sao-variaveis" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> O que são variáveis?</h3>
-<p>Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z…). Exemplos:</p>
-<ul>
-<li>Velocidade marcada no velocímetro de um carro.</li>
-<li>Cor de uma bola retirada de uma urna.</li>
-<li>Número de gols sofridos pelo São Paulo no próximo jogo.</li>
-</ul>
-<p>Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de <em>variável aleatória</em>.</p>
+<p></p>
 </div>
-<div id="conjuntos" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Conjuntos</h3>
-<p>Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C …) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:</p>
-<ul>
-<li>{A, B, C}</li>
-<li>{1, 3, 5}</li>
-<li>{x: x é par}</li>
-</ul>
-<p>Conjuntos importantes para o curso:</p>
-<ul>
-<li><span class="math inline">\(\mathbb{N} = \{0, 1, 2, ...\}\)</span> — conjunto dos números naturais</li>
-<li><span class="math inline">\(\mathbb{R} = (-\infty, +\infty)\)</span> — conjunto dos números reais</li>
-</ul>
+<div id="distribuicao-uniforme" class="section level2">
+<h2><span class="header-section-number">8.4</span> Distribuição Uniforme</h2>
+<p>A variável aleatória <span class="math inline">\(X\)</span>, assumindo os valores <span class="math inline">\(x_1, ..., x_n\)</span>, tem distribuição uniforme se</p>
+<p><span class="math display">\[
+p(x_i) = P(X = x_i) = \frac{1}{n}, \forall 1, ..., n.
+\]</span></p>
 </div>
-<div id="somatorios-e-produtorios" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Somatórios e produtórios</h3>
-<p>Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:</p>
-<p><span class="math inline">\(\sum_{i=1}^{n} i = 1 + 2 + ... + n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\sum_{i=1}^{10}x = 1 + 2 + ... + 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\sum_{i=1}^{10} X = X_1 + X_2 + X_3 + ... + X_{10}\)</span>.</p>
-<p>De forma análoga, temos a seguinte notação para produtórios:</p>
-<p><span class="math inline">\(\prod_{i=1}^{n} i = 1 \times 2 \times ... \times n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\prod_{i=1}^{10}x = 1 \times 2 \times ... \times 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}\)</span>.</p>
+<div id="distribuicao-bernoulli" class="section level2">
+<h2><span class="header-section-number">8.5</span> Distribuição Bernoulli</h2>
+<p>A variável aleatória <span class="math inline">\(X\)</span>, que assume apenas os valores 0 ou 1, com função de probabilidade dada por <span class="math inline">\(p(x) = p\)</span>, se <span class="math inline">\(x = 1\)</span>, e <span class="math inline">\(p(x) = 1 - p\)</span>, se <span class="math inline">\(x = 0\)</span>, é chamada v. a. de Bernoulli. Aqui, consideramos <span class="math inline">\(0 &lt; p &lt; 1\)</span>.</p>
+<p>Temos que <span class="math inline">\(E(X) = p\)</span> e <span class="math inline">\(VAR(X) = p(1 - p)\)</span>.</p>
 </div>
-<div id="vetores" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Vetores</h3>
-<p>Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas.</p>
-<p>Notação: <span class="math inline">\(X = (X_1, X_2, ..., X_n)\)</span>.</p>
+<div id="distribuicao-binomial" class="section level2">
+<h2><span class="header-section-number">8.6</span> Distribuição Binomial</h2>
+<p>Sejam <span class="math inline">\(X_1, ..., X_n\)</span> <span class="math inline">\(n\)</span> variáveis aleatórias independentes com distribuição <span class="math inline">\(Bernoulli(p)\)</span>. A variável aleatória <span class="math inline">\(Y\)</span> definida por</p>
+<p><span class="math display">\[
+Y = \sum_{i=1}^{n} X_i
+\]</span></p>
+<p>tem distribuição Binomial. Simbolicamente, escrevemos <span class="math inline">\(Y \sim Binomial(n, p)\)</span>.</p>
+<p>A função de probabilidade de <span class="math inline">\(Y\)</span> é dada por</p>
+<p><span class="math display">\[
+p(x) = P(X = x) = \binom{n}{p} p^x (1-p)^{n-x}.
+\]</span></p>
+<p>Temos que <span class="math inline">\(E(X) = np\)</span> e <span class="math inline">\(VAR(X) = np(1 - p)\)</span>.</p>
+</div>
+<div id="distribuicao-de-poisson" class="section level2">
+<h2><span class="header-section-number">8.7</span> Distribuição de Poisson</h2>
+<p>Dizemos que a v. a. <span class="math inline">\(X\)</span> tem distribuição Poisson com parâmetro <span class="math inline">\(\lambda &gt; 0\)</span> se</p>
+<p><span class="math display">\[
+P(X = x) = \frac{\exp(- \lambda)\lambda^x}{x!}, \quad x = 0, 1, 2, ...
+\]</span></p>
+<p>Temos que <span class="math inline">\(E(X) = VAR(X) = \lambda\)</span>.</p>
 
 </div>
+<div id="distribuicao-uniforme-1" class="section level2">
+<h2><span class="header-section-number">8.8</span> Distribuição Uniforme</h2>
+<p>Sejam <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> números reais e <span class="math inline">\(X\)</span> uma variável aleatória com função densidade de probabilidade dada por</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{b-a}, \quad a &lt; x &lt; b.
+\]</span></p>
+<p>Dizemos que <span class="math inline">\(X\)</span> segue a distribuição uniforme contínua no intervalo <span class="math inline">\((a,b)\)</span>. Simbolicamente, <span class="math inline">\(X \sim U(a,b)\)</span>.</p>
+<p>Temos que <span class="math inline">\(E(X) = \frac{a + b}{2}\)</span> e <span class="math inline">\(VAR(X) = \frac{(b-a)^2}{12}\)</span>.</p>
+</div>
+<div id="distribuicao-normal" class="section level2">
+<h2><span class="header-section-number">8.9</span> Distribuição Normal</h2>
+<p>Seja <span class="math inline">\(X\)</span> uma variável aleatória contínua com função densidade de probabilidade dada por</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\]</span></p>
+<p>Dizemos que <span class="math inline">\(X\)</span> segue a distribuição Normal com média <span class="math inline">\(\mu \in \mathbf{R}\)</span> e variância <span class="math inline">\(\sigma^2 &gt; 0\)</span>. Simbolicamente, <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span>.</p>
+<div id="normal-padrao" class="section level3">
+<h3><span class="header-section-number">8.9.1</span> Normal padrão</h3>
+<p>Seja <span class="math inline">\(X \sim N(\mu, \sigma^2)\)</span> e <span class="math inline">\(Z\)</span> uma v. a. definida por</p>
+<p><span class="math display">\[
+Z = \frac{X - \mu}{\sigma}.
+\]</span></p>
+<p>Então, <span class="math inline">\(Z \sim N(0,1)\)</span> é dita ser uma Normal padrão.</p>
+</div>
+</div>
+<div id="distribuicao-exponencial" class="section level2">
+<h2><span class="header-section-number">8.10</span> Distribuição Exponencial</h2>
+<p>Seja <span class="math inline">\(\lambda &gt; 0\)</span> e <span class="math inline">\(X\)</span> uma variável aleatória com função densidade de probabilidade dada por</p>
+<p><span class="math display">\[
+f(x) = \lambda e^{-\lambda x}, \quad x &gt; 0.
+\]</span></p>
+<p>Dizemos então que <span class="math inline">\(X\)</span> segue a distribuição exponencial. Simbolicamente, <span class="math inline">\(X \sim Exp(\lambda)\)</span>.</p>
+<p>Temos que <span class="math inline">\(E(X) = \frac{1}{\lambda}\)</span> e <span class="math inline">\(VAR(X) = \frac{1}{\lambda^2}\)</span>.</p>
+</div>
+<div id="distribuicao-gama" class="section level2">
+<h2><span class="header-section-number">8.11</span> Distribuição Gama</h2>
+<p>Sejam <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> números reais positivos e <span class="math inline">\(X\)</span> uma variável aleatória com função densidade de probabilidade dada por</p>
+<p><span class="math display">\[
+f(x) = \frac{b^a}{\Gamma (a)} x^{a-1} e^{-b x}, \quad x &gt; 0.
+\]</span></p>
+<p>Dizemos então que <span class="math inline">\(X\)</span> segue a distribuição Gama. Simbolicamente, <span class="math inline">\(X \sim Gama(a, b)\)</span>.</p>
+<p>Temos que <span class="math inline">\(E(X) = \frac{a}{b}\)</span> e <span class="math inline">\(VAR(X) = \frac{a}{b^2}\)</span>.</p>
+
+</div>
+<div id="inferencia-estatistica" class="section level2">
+<h2><span class="header-section-number">8.12</span> Inferência Estatística</h2>
+<p>O principal objetivo da análise inferencial é fazer afirmações sobre alguma característica de interesse da população.</p>
+<p><strong>Definição.</strong> População é o conjunto de todos os elementos ou resultados sob investigação. Uma amostra é qualquer subconjunto da população. A cada elemento da população damos o nome de unidade amostral.</p>
+</div>
+<div id="amostragem" class="section level2">
+<h2><span class="header-section-number">8.13</span> Amostragem</h2>
+<p>Podemos dividir os procedimentos científicos de obtenção de dados amostrais em três grandes grupos.</p>
+<ul>
+<li>Levantamento amostrais</li>
+<li>Planejamento de experimento</li>
+<li>Levantamento observacional</li>
+</ul>
+<p>Aqui, utilizaremos a técnica de amostragem conhecida por amostragem aleatória simples.</p>
+<p><strong>Definição.</strong> Uma amostra aleatória simples de tamanho <span class="math inline">\(n\)</span> de uma variável aleatória <span class="math inline">\(X\)</span> qualquer é o conjunto de <span class="math inline">\(n\)</span> variáveis aleatórias independentes <span class="math inline">\(X_1, ..., X_n\)</span> cada uma com a mesma distribuição de <span class="math inline">\(X\)</span>.</p>
+
 </div>
 </div>
             </section>
@@ -243,8 +357,8 @@
           </div>
         </div>
       </div>
-
-<a href="analise-descritiva.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidade.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="estimacao-pontual.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

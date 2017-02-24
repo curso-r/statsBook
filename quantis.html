@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="analise-descritiva.html">
+<link rel="prev" href="medidas-de-dispersao.html">
+<link rel="next" href="medidas-de-associacao-entre-duas-variaveis.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -180,71 +180,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Apostilas dos cursos de Estatística I e Estatística II</h1>
-<h4 class="author"><em>Curso-R</em></h4>
-<h4 class="date"><em>2017-02-24</em></h4>
-</div>
-<div id="preambulo" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Preâmbulo</h1>
-<p>Essa é a apostila dos cursos de Estatística I e Estatística II da Curso-R.</p>
-
-<div id="base-matemativa" class="section level2">
-<h2><span class="header-section-number">1.1</span> Base matemátiva</h2>
-<div id="o-que-sao-variaveis" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> O que são variáveis?</h3>
-<p>Variáveis são simbolos que representam valores desconhecidos que podem variar dentro de um conjunto de possíveis valores. Aqui, esses símbolos serão denotados por letras maiúsculas do nosso alfabeto (X, Y, Z…). Exemplos:</p>
-<ul>
-<li>Velocidade marcada no velocímetro de um carro.</li>
-<li>Cor de uma bola retirada de uma urna.</li>
-<li>Número de gols sofridos pelo São Paulo no próximo jogo.</li>
-</ul>
-<p>Quando o processo de mensuração de uma variável é dado por um experimento aleatório, chamamos essa variável de <em>variável aleatória</em>.</p>
-</div>
-<div id="conjuntos" class="section level3">
-<h3><span class="header-section-number">1.1.2</span> Conjuntos</h3>
-<p>Um conjunto é uma coleção de objetos distintos. Em geral, eles são denotados por letras maiúsculas do nosso alfabeto (A, B, C …) e são escritos como uma lista de seus elementos limitados por chaves. Exemplos:</p>
-<ul>
-<li>{A, B, C}</li>
-<li>{1, 3, 5}</li>
-<li>{x: x é par}</li>
-</ul>
-<p>Conjuntos importantes para o curso:</p>
-<ul>
-<li><span class="math inline">\(\mathbb{N} = \{0, 1, 2, ...\}\)</span> — conjunto dos números naturais</li>
-<li><span class="math inline">\(\mathbb{R} = (-\infty, +\infty)\)</span> — conjunto dos números reais</li>
-</ul>
-</div>
-<div id="somatorios-e-produtorios" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Somatórios e produtórios</h3>
-<p>Quando estamos lidando com somas muito extensas de números ou variáveis, podemos utilizar a seguinte notação:</p>
-<p><span class="math inline">\(\sum_{i=1}^{n} i = 1 + 2 + ... + n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\sum_{i=1}^{10}x = 1 + 2 + ... + 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\sum_{i=1}^{10} X = X_1 + X_2 + X_3 + ... + X_{10}\)</span>.</p>
-<p>De forma análoga, temos a seguinte notação para produtórios:</p>
-<p><span class="math inline">\(\prod_{i=1}^{n} i = 1 \times 2 \times ... \times n\)</span>.</p>
-<p>Dessa forma, temos que</p>
-<p><span class="math inline">\(\prod_{i=1}^{10}x = 1 \times 2 \times ... \times 10\)</span></p>
-<p>ou</p>
-<p><span class="math inline">\(\prod_{i=1}^{10} X = X_1 \times X_2 \times X_3 \times ... \times X_{10}\)</span>.</p>
-</div>
-<div id="vetores" class="section level3">
-<h3><span class="header-section-number">1.1.4</span> Vetores</h3>
-<p>Neste curso, chamaremos X de vetor de tamanho n se X denotar uma sequência de n variáveis indexadas.</p>
-<p>Notação: <span class="math inline">\(X = (X_1, X_2, ..., X_n)\)</span>.</p>
-
-</div>
-</div>
+<div id="quantis" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Quantis</h1>
+<p>Vimos que a mediana é uma medida que deixa metade dos dados abaixo dela e metade acima. De modo geral, podemos definir a medida <span class="math inline">\(q_p\)</span>, <span class="math inline">\(0 &lt; p &lt; 100\)</span>, tal que <span class="math inline">\(p%\)</span> das observações sejam menores que <span class="math inline">\(q_p\)</span>. Esta medida é chamada de quantil de ordem <span class="math inline">\(p\)</span>.</p>
+<p>Alguns quantis são bastante utilizados na prática. São eles</p>
+<p><span class="math inline">\(Q1 = q_{25\%}\)</span> (primeiro quartil)</p>
+<p><span class="math inline">\(Q2 = q_{50\%}\)</span> (mediana)</p>
+<p><span class="math inline">\(Q3 = q_{75\%}\)</span> (terceiro quartil)</p>
+<p>Observe que os <span class="math inline">\(q_{0\%}\)</span> e <span class="math inline">\(q_{100\%}\)</span> denotam, respectivamente, o mínimo e o máximo de conjunto de dados.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="analise-descritiva.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="medidas-de-dispersao.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas-de-associacao-entre-duas-variaveis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
