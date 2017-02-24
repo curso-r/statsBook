@@ -1,12 +1,3 @@
----
-title: "Capítulo 11 - Testes de hipóteses"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-22
----
-
 ## Construçao de um teste de hipóteses
 
 Vamos motivar a construçãode um teste de hipóteses a partir do seguinte exemplo.

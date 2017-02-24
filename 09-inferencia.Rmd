@@ -1,12 +1,3 @@
----
-title: "Capítulo 8 - Inferência Estatística"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-12
----
-
 ## Inferência Estatística
 
 O principal objetivo da análise inferencial é fazer afirmações sobre alguma característica de interesse da população.

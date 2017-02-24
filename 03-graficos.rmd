@@ -1,12 +1,3 @@
----
-title: "Capítulo 03 - Gráficos"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-06
----
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(pander)
 library(ggplot2)
@@ -222,9 +213,9 @@ USAccDeaths %>%
 
 ```{r, warning=FALSE, echo=FALSE}
 
-teste <- read.csv(file="dados_times.csv")
+#teste <- read.csv(file="dados_times.csv")
 
-pie(x = teste$torcedores, labels = teste$time)
+#pie(x = teste$torcedores, labels = teste$time)
   
 ```
 

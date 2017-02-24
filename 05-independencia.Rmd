@@ -1,12 +1,3 @@
----
-title: "Capítulo 04 - Independência e condicionalidade"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-12
----
-
 ### Condicionalidade
 
 **Definição**. Para dois eventos quaisquer $A$ e $B$, sendo $P(B) > 0$, definimos a *probabilidade condicional* de $A$ dado $B$, denotada por $P(A|B)$, como sendo

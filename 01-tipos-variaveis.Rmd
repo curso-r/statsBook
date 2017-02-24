@@ -1,12 +1,3 @@
----
-title: "Capítulo 1 - Tipos de variáveis e distribuição de frequência"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2015-01-19
----
-
 # Análise descritiva
 
 Os principais objetivos da análise descritiva são:

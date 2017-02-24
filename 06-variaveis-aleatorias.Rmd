@@ -1,12 +1,3 @@
----
-title: "Capítulo 05 - Variáveis aleatórias"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-12
----
-
 # Variáveis aleatórias
 
 Uma variável aleatória (v.a.) é uma função $X$ definida no espaço amostral $\Omega$ e com valores num conjunto de pontos de $\mathbf{R}$. Se esse conjunto de pontos é enumerável, a variável $X$ é discreta. Se o conjunto é não-enumerável, $X$ é contínua.

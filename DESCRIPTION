@@ -12,6 +12,7 @@ Imports: dplyr,
     janitor,
     bookdown,
     abjutils,
-    pander
+    pander,
+    vcd
 Remotes:
     rstudio/bookdown

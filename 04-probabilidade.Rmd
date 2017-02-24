@@ -1,12 +1,3 @@
----
-title: "Capítulo 03 - Conceitos básicos de probabilidade"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-11
----
-
 # Probabilidade
 
 A interpretação da probabilidade pode variar de pessoa para pessoa. Para alguns, a probabilidade é vista como o limite de uma sequência de frequências relativas. Essa é a visão frequentista da probabilidade. Para outros, a probabilidade é uma medida subjetiva de incerteza. Essa é a visão Bayesiana.

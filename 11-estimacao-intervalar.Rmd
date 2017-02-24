@@ -1,12 +1,3 @@
----
-title: "Capítulo 10 - Estimação intevalar"
-output:
-  html_document:
-    toc_depth: 3
-    toc: yes
-date: 2016-01-21
----
-
 ## Construção de um IC
 
 Como exemplo, vamos construir um intervalo de confiança para a média populacional.
